@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Expedientes Semanales · CABA · Semana 2–6 marzo 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #f5f0e8;
+  --surface: #ffffff;
+  --surface2: #ede7db;
+  --border: #ddd5c8;
+  --text: #2c2820;
+  --muted: #8a7e72;
+  --accent: #b87333;
+
+  /* bloque colors */
+  --fba: #d4922a;   --fba-bg: #fdf3e3; --fba-border: #f0c97a;
+  --lla: #c45c5c;   --lla-bg: #fdeaea; --lla-border: #f0a0a0;
+  --vice: #b56090;  --vice-bg: #fce8f3; --vice-border: #e8a8cc;
+  --vpm: #5a9e5a;   --vpm-bg: #eaf5ea; --vpm-border: #9dd09d;
+  --cyd: #3d88c4;   --cyd-bg: #e6f2fc; --cyd-border: #8cc0e8;
+  --ucr: #7c5bb5;   --ucr-bg: #f0ebfc; --ucr-border: #b89ee0;
+  --izq: #c4703a;   --izq-bg: #fdf0e8; --izq-border: #e8b08a;
+  --def: #3aabab;   --def-bg: #e6f7f7; --def-border: #80d0d0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.app-header {
+  background: linear-gradient(135deg, #fdf6ee 0%, #f0e4cc 100%);
+  border-bottom: 2px solid var(--fba-border);
+  padding: 20px 16px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(180,120,40,0.10);
+}
+.header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.header-kicker {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.header-title {
+  font-family: 'Lora', serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text);
+}
+.header-title span { color: var(--accent); }
+.header-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.header-pills { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.pill {
+  background: rgba(255,255,255,0.75);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.pill strong { color: var(--accent); }
+
+/* ── TABS ── */
+.tabs-bar {
+  display: flex;
+  background: var(--surface2);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 115px;
+  z-index: 99;
+}
+.tab-btn {
+  flex: 1;
+  padding: 12px 4px;
+  border: none;
+  background: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color .2s, border-color .2s;
+}
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: var(--surface);
+}
+
+/* ── PANELS ── */
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* ── SECTION A ── */
+.sec-header { padding: 20px 16px 0; }
+.sec-title {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.sec-desc { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+
+.bloques-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 0 16px 24px;
+}
+@media (max-width: 400px) { .bloques-grid { grid-template-columns: 1fr; } }
+
+.bloque-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px;
+  border-top: 4px solid;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.bloque-name {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+.bloque-total {
+  font-family: 'Lora', serif;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.bloque-subtotal { font-size: 10px; color: var(--muted); margin-bottom: 12px; }
+.tipo-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+.tipo-label { font-size: 10px; color: var(--muted); width: 72px; flex-shrink: 0; }
+.tipo-bar-bg { flex: 1; height: 6px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
+.tipo-bar-fill { height: 100%; border-radius: 3px; }
+.tipo-num { font-size: 10px; font-weight: 700; width: 18px; text-align: right; }
+
+/* bloque accent colors */
+.bc-fba { border-top-color: var(--fba); }
+.bc-lla { border-top-color: var(--lla); }
+.bc-vice { border-top-color: var(--vice); }
+.bc-vpm { border-top-color: var(--vpm); }
+.bc-cyd { border-top-color: var(--cyd); }
+.bc-ucr { border-top-color: var(--ucr); }
+.bc-izq { border-top-color: var(--izq); }
+.bc-def { border-top-color: var(--def); }
+
+.ct-fba { color: var(--fba); } .fill-fba { background: var(--fba); }
+.ct-lla { color: var(--lla); } .fill-lla { background: var(--lla); }
+.ct-vice { color: var(--vice); } .fill-vice { background: var(--vice); }
+.ct-vpm { color: var(--vpm); } .fill-vpm { background: var(--vpm); }
+.ct-cyd { color: var(--cyd); } .fill-cyd { background: var(--cyd); }
+.ct-ucr { color: var(--ucr); } .fill-ucr { background: var(--ucr); }
+.ct-izq { color: var(--izq); } .fill-izq { background: var(--izq); }
+.ct-def { color: var(--def); } .fill-def { background: var(--def); }
+
+/* ── SECTION B FILTERS ── */
+.filters-bar {
+  padding: 14px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 156px;
+  z-index: 98;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.search-wrap { position: relative; }
+.search-wrap svg {
+  position: absolute;
+  left: 10px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+  width: 15px; height: 15px;
+}
+#searchInput {
+  width: 100%;
+  padding: 9px 12px 9px 32px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  background: var(--bg);
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s;
+}
+#searchInput:focus { border-color: var(--accent); }
+#searchInput::placeholder { color: var(--muted); }
+
+.filter-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.filter-chip {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all .15s;
+  white-space: nowrap;
+  user-select: none;
+}
+.filter-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.filter-chip:hover { border-color: var(--accent); color: var(--accent); }
+.filter-chip.active:hover { color: #fff; }
+
+.filter-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.results-count {
+  font-size: 11px;
+  color: var(--muted);
+  padding: 6px 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.results-count strong { color: var(--text); }
+
+/* ── PROYECTOS LIST ── */
+.proyectos-container { padding: 10px 12px 24px; }
+
+.bloque-group { margin-bottom: 4px; }
+.bloque-group-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  margin-top: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.bloque-group-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+.bg-fba { background: var(--fba-bg); color: var(--fba); }
+.bg-lla { background: var(--lla-bg); color: var(--lla); }
+.bg-vice { background: var(--vice-bg); color: var(--vice); }
+.bg-vpm { background: var(--vpm-bg); color: var(--vpm); }
+.bg-cyd { background: var(--cyd-bg); color: var(--cyd); }
+.bg-ucr { background: var(--ucr-bg); color: var(--ucr); }
+.bg-izq { background: var(--izq-bg); color: var(--izq); }
+.bg-def { background: var(--def-bg); color: var(--def); }
+
+.proyecto-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid;
+  border-radius: 10px;
+  padding: 12px 13px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: box-shadow .15s;
+}
+.proyecto-card:active { box-shadow: 0 2px 8px rgba(0,0,0,0.10); }
+
+.border-fba { border-left-color: var(--fba); }
+.border-lla { border-left-color: var(--lla); }
+.border-vice { border-left-color: var(--vice); }
+.border-vpm { border-left-color: var(--vpm); }
+.border-cyd { border-left-color: var(--cyd); }
+.border-ucr { border-left-color: var(--ucr); }
+.border-izq { border-left-color: var(--izq); }
+.border-def { border-left-color: var(--def); }
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+.card-meta { font-size: 10px; color: var(--muted); font-weight: 500; flex-shrink: 0; }
+.tipo-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.badge-ley  { background: #dceefb; color: #1a6aaa; }
+.badge-res  { background: #d6f0dc; color: #226633; }
+.badge-dec  { background: #fef3d8; color: #996600; }
+
+.card-sumario {
+  font-family: 'Lora', serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+.card-desc {
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.tag {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--surface2);
+  color: var(--muted);
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+}
+.no-results svg { width: 40px; height: 40px; margin: 0 auto 12px; display: block; opacity: 0.3; }
+.no-results p { font-size: 14px; }
+
+/* ── SECTION C ── */
+.temas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 0 16px 24px;
+}
+.tema-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.tema-num {
+  font-family: 'Lora', serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 44px;
+  text-align: center;
+}
+.tema-name {
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+/* tema number colors cycling */
+.tn0{color:#c4742a} .tn1{color:#3a7ab5} .tn2{color:#aa3535}
+.tn3{color:#3a7a3a} .tn4{color:#6b3595} .tn5{color:#a04020}
+.tn6{color:#1a7878} .tn7{color:#903060} .tn8{color:#2a6e44}
+.tn9{color:#7a4a00} .tn10{color:#5535a0} .tn11{color:#196060}
+.tn12{color:#802060} .tn13{color:#5a3820} .tn14{color:#7a6000}
+.tn15{color:#184070} .tn16{color:#5a2078} .tn17{color:#105050}
+.tn18{color:#803010} .tn19{color:#206030} .tn20{color:#604a00}
+.tn21{color:#303878} .tn22{color:#005050} .tn23{color:#702040}
+.tn24{color:#304820} .tn25{color:#503010}
+
+/* footer */
+.app-footer {
+  padding: 16px;
+  text-align: center;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  border-top: 1px solid var(--border);
+  background: var(--surface2);
+}
+
+/* highlight matched text */
+mark {
+  background: #ffe082;
+  border-radius: 2px;
+  padding: 0 1px;
+  color: inherit;
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="app-header">
+  <div class="header-kicker">Legislatura · Ciudad Autónoma de Buenos Aires</div>
+  <div class="header-top">
+    <div>
+      <div class="header-title">Expedientes <span>Semanales</span></div>
+      <div class="header-sub">Segundo filtro · 2 al 6 de marzo de 2026</div>
+    </div>
+  </div>
+  <div class="header-pills">
+    <span class="pill"><strong>211</strong> expedientes</span>
+    <span class="pill"><strong>8</strong> bloques</span>
+    <span class="pill"><strong>3</strong> tipos</span>
+  </div>
+</header>
+
+<!-- TABS -->
+<nav class="tabs-bar">
+  <button class="tab-btn active" onclick="showTab('a')">A · Por bloque</button>
+  <button class="tab-btn" onclick="showTab('b')">B · Expedientes</button>
+  <button class="tab-btn" onclick="showTab('c')">C · Por tema</button>
+</nav>
+
+<!-- ════════════════════════════════════ -->
+<!-- PANEL A                             -->
+<!-- ════════════════════════════════════ -->
+<div id="panel-a" class="panel active">
+  <div class="sec-header">
+    <div class="sec-title" style="padding-top:20px">Proyectos por bloque</div>
+    <div class="sec-desc">Leyes, resoluciones y declaraciones presentadas por cada bloque</div>
+  </div>
+  <div class="bloques-grid">
+
+    <!-- FBA 69 -->
+    <div class="bloque-card bc-fba">
+      <div class="bloque-name ct-fba">Fuerza por Bs. As.</div>
+      <div class="bloque-total ct-fba">69</div>
+      <div class="bloque-subtotal">proyectos presentados</div>
+      <div class="tipo-row"><span class="tipo-label">Leyes</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-fba" style="width:100%"></div></div><span class="tipo-num ct-fba">26</span></div>
+      <div class="tipo-row"><span class="tipo-label">Resoluciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-fba" style="width:62%"></div></div><span class="tipo-num ct-fba">16</span></div>
+      <div class="tipo-row"><span class="tipo-label">Declaraciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-fba" style="width:100%"></div></div><span class="tipo-num ct-fba">27</span></div>
+    </div>
+
+    <!-- VPM 45 -->
+    <div class="bloque-card bc-vpm">
+      <div class="bloque-name ct-vpm">Vamos por Más</div>
+      <div class="bloque-total ct-vpm">45</div>
+      <div class="bloque-subtotal">proyectos presentados</div>
+      <div class="tipo-row"><span class="tipo-label">Leyes</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-vpm" style="width:100%"></div></div><span class="tipo-num ct-vpm">22</span></div>
+      <div class="tipo-row"><span class="tipo-label">Resoluciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-vpm" style="width:23%"></div></div><span class="tipo-num ct-vpm">5</span></div>
+      <div class="tipo-row"><span class="tipo-label">Declaraciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-vpm" style="width:82%"></div></div><span class="tipo-num ct-vpm">18</span></div>
+    </div>
+
+    <!-- CYD 38 -->
+    <div class="bloque-card bc-cyd">
+      <div class="bloque-name ct-cyd">Confianza y Des.</div>
+      <div class="bloque-total ct-cyd">38</div>
+      <div class="bloque-subtotal">proyectos presentados</div>
+      <div class="tipo-row"><span class="tipo-label">Leyes</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-cyd" style="width:100%"></div></div><span class="tipo-num ct-cyd">28</span></div>
+      <div class="tipo-row"><span class="tipo-label">Resoluciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-cyd" style="width:7%"></div></div><span class="tipo-num ct-cyd">2</span></div>
+      <div class="tipo-row"><span class="tipo-label">Declaraciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-cyd" style="width:29%"></div></div><span class="tipo-num ct-cyd">8</span></div>
+    </div>
+
+    <!-- UCR 28 -->
+    <div class="bloque-card bc-ucr">
+      <div class="bloque-name ct-ucr">Ciudad. Unidos/UCR</div>
+      <div class="bloque-total ct-ucr">28</div>
+      <div class="bloque-subtotal">proyectos presentados</div>
+      <div class="tipo-row"><span class="tipo-label">Leyes</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-ucr" style="width:100%"></div></div><span class="tipo-num ct-ucr">16</span></div>
+      <div class="tipo-row"><span class="tipo-label">Resoluciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-ucr" style="width:38%"></div></div><span class="tipo-num ct-ucr">6</span></div>
+      <div class="tipo-row"><span class="tipo-label">Declaraciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-ucr" style="width:38%"></div></div><span class="tipo-num ct-ucr">6</span></div>
+    </div>
+
+    <!-- LLA 14 -->
+    <div class="bloque-card bc-lla">
+      <div class="bloque-name ct-lla">La Libertad Avanza</div>
+      <div class="bloque-total ct-lla">14</div>
+      <div class="bloque-subtotal">proyectos presentados</div>
+      <div class="tipo-row"><span class="tipo-label">Leyes</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-lla" style="width:100%"></div></div><span class="tipo-num ct-lla">9</span></div>
+      <div class="tipo-row"><span class="tipo-label">Resoluciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-lla" style="width:0%"></div></div><span class="tipo-num ct-lla">0</span></div>
+      <div class="tipo-row"><span class="tipo-label">Declaraciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-lla" style="width:56%"></div></div><span class="tipo-num ct-lla">5</span></div>
+    </div>
+
+    <!-- IZQ 11 -->
+    <div class="bloque-card bc-izq">
+      <div class="bloque-name ct-izq">Izquierda</div>
+      <div class="bloque-total ct-izq">11</div>
+      <div class="bloque-subtotal">proyectos presentados</div>
+      <div class="tipo-row"><span class="tipo-label">Leyes</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-izq" style="width:17%"></div></div><span class="tipo-num ct-izq">1</span></div>
+      <div class="tipo-row"><span class="tipo-label">Resoluciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-izq" style="width:100%"></div></div><span class="tipo-num ct-izq">6</span></div>
+      <div class="tipo-row"><span class="tipo-label">Declaraciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-izq" style="width:67%"></div></div><span class="tipo-num ct-izq">4</span></div>
+    </div>
+
+    <!-- DEF 5 -->
+    <div class="bloque-card bc-def">
+      <div class="bloque-name ct-def">Defensoría del Pueblo</div>
+      <div class="bloque-total ct-def">5</div>
+      <div class="bloque-subtotal">proyectos presentados</div>
+      <div class="tipo-row"><span class="tipo-label">Leyes</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-def" style="width:100%"></div></div><span class="tipo-num ct-def">5</span></div>
+      <div class="tipo-row"><span class="tipo-label">Resoluciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-def" style="width:0%"></div></div><span class="tipo-num ct-def">0</span></div>
+      <div class="tipo-row"><span class="tipo-label">Declaraciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-def" style="width:0%"></div></div><span class="tipo-num ct-def">0</span></div>
+    </div>
+
+    <!-- VICE 2 -->
+    <div class="bloque-card bc-vice">
+      <div class="bloque-name ct-vice">Vicejefa de Gobierno</div>
+      <div class="bloque-total ct-vice">2</div>
+      <div class="bloque-subtotal">proyectos presentados</div>
+      <div class="tipo-row"><span class="tipo-label">Leyes</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-vice" style="width:100%"></div></div><span class="tipo-num ct-vice">1</span></div>
+      <div class="tipo-row"><span class="tipo-label">Resoluciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-vice" style="width:0%"></div></div><span class="tipo-num ct-vice">0</span></div>
+      <div class="tipo-row"><span class="tipo-label">Declaraciones</span><div class="tipo-bar-bg"><div class="tipo-bar-fill fill-vice" style="width:100%"></div></div><span class="tipo-num ct-vice">1</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- PANEL B                             -->
+<!-- ════════════════════════════════════ -->
+<div id="panel-b" class="panel">
+
+  <div class="filters-bar">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="searchInput" type="search" placeholder="Buscar por sumario, autor, expediente…" oninput="applyFilters()" />
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Bloque</span>
+      <button class="filter-chip active" data-filter-bloque="all" onclick="toggleBloqueFilter(this,'all')">Todos</button>
+      <button class="filter-chip" data-filter-bloque="FBA" onclick="toggleBloqueFilter(this,'FBA')">FBA</button>
+      <button class="filter-chip" data-filter-bloque="VPM" onclick="toggleBloqueFilter(this,'VPM')">VPM</button>
+      <button class="filter-chip" data-filter-bloque="CYD" onclick="toggleBloqueFilter(this,'CYD')">C&amp;D</button>
+      <button class="filter-chip" data-filter-bloque="UCR" onclick="toggleBloqueFilter(this,'UCR')">UCR</button>
+      <button class="filter-chip" data-filter-bloque="LLA" onclick="toggleBloqueFilter(this,'LLA')">LLA</button>
+      <button class="filter-chip" data-filter-bloque="IZQ" onclick="toggleBloqueFilter(this,'IZQ')">Izq.</button>
+      <button class="filter-chip" data-filter-bloque="DEF" onclick="toggleBloqueFilter(this,'DEF')">Def.</button>
+      <button class="filter-chip" data-filter-bloque="VICE" onclick="toggleBloqueFilter(this,'VICE')">Vice</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Tipo</span>
+      <button class="filter-chip active" data-filter-tipo="all" onclick="toggleTipoFilter(this,'all')">Todos</button>
+      <button class="filter-chip" data-filter-tipo="ley" onclick="toggleTipoFilter(this,'ley')">Leyes</button>
+      <button class="filter-chip" data-filter-tipo="res" onclick="toggleTipoFilter(this,'res')">Resoluciones</button>
+      <button class="filter-chip" data-filter-tipo="dec" onclick="toggleTipoFilter(this,'dec')">Declaraciones</button>
+    </div>
+    <div class="filter-row" id="tema-filter-row" style="overflow-x:auto; padding-bottom:2px; flex-wrap:nowrap;">
+      <span class="filter-label" style="flex-shrink:0">Tema</span>
+      <button class="filter-chip active" data-filter-tema="all" onclick="toggleTemaFilter(this,'all')">Todos</button>
+      <button class="filter-chip" data-filter-tema="presupuesto" onclick="toggleTemaFilter(this,'presupuesto')">Presupuesto</button>
+      <button class="filter-chip" data-filter-tema="planeamiento" onclick="toggleTemaFilter(this,'planeamiento')">Planeamiento</button>
+      <button class="filter-chip" data-filter-tema="justicia" onclick="toggleTemaFilter(this,'justicia')">Justicia</button>
+      <button class="filter-chip" data-filter-tema="educacion" onclick="toggleTemaFilter(this,'educacion')">Educación</button>
+      <button class="filter-chip" data-filter-tema="salud" onclick="toggleTemaFilter(this,'salud')">Salud</button>
+      <button class="filter-chip" data-filter-tema="seguridad" onclick="toggleTemaFilter(this,'seguridad')">Seguridad</button>
+      <button class="filter-chip" data-filter-tema="cultura" onclick="toggleTemaFilter(this,'cultura')">Cultura</button>
+      <button class="filter-chip" data-filter-tema="desarrollo" onclick="toggleTemaFilter(this,'desarrollo')">Des. Económico</button>
+      <button class="filter-chip" data-filter-tema="ddhh" onclick="toggleTemaFilter(this,'ddhh')">Derechos Humanos</button>
+      <button class="filter-chip" data-filter-tema="constitucional" onclick="toggleTemaFilter(this,'constitucional')">As. Constitucionales</button>
+      <button class="filter-chip" data-filter-tema="genero" onclick="toggleTemaFilter(this,'genero')">Géneros</button>
+      <button class="filter-chip" data-filter-tema="niñez" onclick="toggleTemaFilter(this,'niñez')">Niñez</button>
+      <button class="filter-chip" data-filter-tema="comunicacion" onclick="toggleTemaFilter(this,'comunicacion')">Comunicación</button>
+      <button class="filter-chip" data-filter-tema="trabajo" onclick="toggleTemaFilter(this,'trabajo')">Leg. del Trabajo</button>
+      <button class="filter-chip" data-filter-tema="deportes" onclick="toggleTemaFilter(this,'deportes')">Turismo/Deportes</button>
+      <button class="filter-chip" data-filter-tema="vivienda" onclick="toggleTemaFilter(this,'vivienda')">Vivienda</button>
+      <button class="filter-chip" data-filter-tema="transporte" onclick="toggleTemaFilter(this,'transporte')">Transporte</button>
+      <button class="filter-chip" data-filter-tema="ambiente" onclick="toggleTemaFilter(this,'ambiente')">Ambiente</button>
+      <button class="filter-chip" data-filter-tema="discapacidad" onclick="toggleTemaFilter(this,'discapacidad')">Discapacidad</button>
+    </div>
+  </div>
+
+  <div class="results-count" id="resultsCount"><strong>211</strong> expedientes</div>
+  <div class="proyectos-container" id="proyectosContainer"></div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<!-- PANEL C                             -->
+<!-- ════════════════════════════════════ -->
+<div id="panel-c" class="panel">
+  <div class="sec-header">
+    <div class="sec-title" style="padding-top:20px">Proyectos por tema</div>
+    <div class="sec-desc">Cantidad de proyectos por comisión temática. Un proyecto puede pertenecer a más de una.</div>
+  </div>
+  <div class="temas-grid">
+    <div class="tema-card"><span class="tema-num tn0">49</span><span class="tema-name">Presupuesto / Hacienda</span></div>
+    <div class="tema-card"><span class="tema-num tn1">32</span><span class="tema-name">Planeamiento Urbano</span></div>
+    <div class="tema-card"><span class="tema-num tn2">27</span><span class="tema-name">Justicia</span></div>
+    <div class="tema-card"><span class="tema-num tn3">26</span><span class="tema-name">Educación</span></div>
+    <div class="tema-card"><span class="tema-num tn4">24</span><span class="tema-name">Salud</span></div>
+    <div class="tema-card"><span class="tema-num tn5">22</span><span class="tema-name">Seguridad</span></div>
+    <div class="tema-card"><span class="tema-num tn6">21</span><span class="tema-name">Cultura</span></div>
+    <div class="tema-card"><span class="tema-num tn7">20</span><span class="tema-name">Desarrollo Económico</span></div>
+    <div class="tema-card"><span class="tema-num tn8">18</span><span class="tema-name">Derechos Humanos</span></div>
+    <div class="tema-card"><span class="tema-num tn9">16</span><span class="tema-name">Asuntos Constitucionales</span></div>
+    <div class="tema-card"><span class="tema-num tn10">14</span><span class="tema-name">Mujeres, Géneros y Diversidades</span></div>
+    <div class="tema-card"><span class="tema-num tn11">13</span><span class="tema-name">Niñez, Adolescencia y Juventud</span></div>
+    <div class="tema-card"><span class="tema-num tn12">10</span><span class="tema-name">Comunicación Social</span></div>
+    <div class="tema-card"><span class="tema-num tn13">9</span><span class="tema-name">Legislación del Trabajo</span></div>
+    <div class="tema-card"><span class="tema-num tn14">9</span><span class="tema-name">Turismo y Deportes</span></div>
+    <div class="tema-card"><span class="tema-num tn15">7</span><span class="tema-name">Vivienda</span></div>
+    <div class="tema-card"><span class="tema-num tn16">6</span><span class="tema-name">Relaciones Interjurisd.</span></div>
+    <div class="tema-card"><span class="tema-num tn17">6</span><span class="tema-name">Transporte</span></div>
+    <div class="tema-card"><span class="tema-num tn18">5</span><span class="tema-name">Obras y Servicios Públicos</span></div>
+    <div class="tema-card"><span class="tema-num tn19">5</span><span class="tema-name">Descentralización y Participación</span></div>
+    <div class="tema-card"><span class="tema-num tn20">5</span><span class="tema-name">Discapacidad</span></div>
+    <div class="tema-card"><span class="tema-num tn21">4</span><span class="tema-name">Ambiente</span></div>
+    <div class="tema-card"><span class="tema-num tn22">3</span><span class="tema-name">Espacio Público</span></div>
+    <div class="tema-card"><span class="tema-num tn23">3</span><span class="tema-name">Promoción e Integración Social</span></div>
+    <div class="tema-card"><span class="tema-num tn24">2</span><span class="tema-name">Personas Mayores</span></div>
+    <div class="tema-card"><span class="tema-num tn25">2</span><span class="tema-name">Defensa Consumidores / Leg. General</span></div>
+  </div>
+</div>
+
+<footer class="app-footer">
+  Expedientes Semanales · Segundo Filtro · Semana 2–6 de marzo de 2026 · Legislatura CABA
+</footer>
+
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────
+const PROYECTOS = [
+  // ── FUERZA POR BUENOS AIRES ──────────────────────────────────────────
+  {id:"16-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["educacion","trabajo","presupuesto"],sumario:"Plus diferencial para docentes en cargos de conducción",desc:"Crea un Plus por Jerarquización (25% del sueldo básico) y un Plus por Establecimiento para docentes con cargos de conducción. Bonificables por antigüedad. Plazo de 90 días para reglamentación."},
+  {id:"67-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["deportes","seguridad"],sumario:"Mesas de Participación Vecinal en estadios (mod. Ley 5.847)",desc:"Crea Mesas Vecinales en comunas con estadios de fútbol, integradas por vecinos, junta comunal, club y responsable de seguridad. Convocadas mensualmente por el Comité de Seguridad."},
+  {id:"69-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["desarrollo","seguridad"],sumario:"Mesas de Participación Vecinal en eventos masivos (mod. Ley 5.641)",desc:"Crea mesas vecinales permanentes en comunas donde se realicen eventos masivos de más de 5.000 asistentes, con participación de AGC, comisaría y Ministerio de Seguridad."},
+  {id:"102-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["cultura"],sumario:"Nomenclatura de estaciones de subte (mod. Ley 83)",desc:"Al agregar un nombre nuevo a una estación de subte, la denominación será compuesta durante 5 años; luego rige únicamente la nueva denominación y caduca la original."},
+  {id:"110-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["salud","desarrollo","justicia"],sumario:"Régimen legal de la actividad farmacéutica",desc:"Regula habilitación y funcionamiento de farmacias, droguerías y herboristerías en CABA: director farmacéutico obligatorio, requisitos técnicos, registros y sanciones con intervención de la AGC."},
+  {id:"125-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["planeamiento"],sumario:"Reforma del Consejo Asesor de Asuntos Patrimoniales (mod. Ordenanza 52.257)",desc:"Lo presidirá el/la Director/a de Interpretación Urbanística e incorpora legisladores, Ministerio de Cultura, Defensoría del Pueblo e instituciones académicas y profesionales."},
+  {id:"142-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["desarrollo","presupuesto"],sumario:"Mesa de Trabajo de Reforma Tributaria de la CABA",desc:"Crea la Mesa de Trabajo "Reforma Tributaria CABA" en el ámbito de la Comisión de Presupuesto para analizar la estructura impositiva y elaborar informes orientados a un sistema más justo y simplificado."},
+  {id:"146-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["presupuesto"],sumario:"Oficina de Presupuesto de la Legislatura (OPLCABA)",desc:"Crea la OPLCABA como organismo desconcentrado para brindar apoyo técnico presupuestario y fiscal. Director/a elegido por concurso, mandato de 5 años, acceso al SIGAF y publicación web obligatoria."},
+  {id:"148-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["presupuesto"],sumario:"Exención de IIBB para egresados de escuelas técnicas (mod. Código Fiscal 2026)",desc:"Exime del Impuesto sobre los Ingresos Brutos a egresados de escuelas técnicas, CFP e institutos superiores cuando la actividad declarada esté vinculada a su formación educativa."},
+  {id:"151-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["presupuesto"],sumario:"Alícuota 0% en electricidad y gas para usuarios residenciales y comercios",desc:"Fija en 0% la contribución sobre electricidad y la alícuota de IIBB en gas natural cuando se trasladen a usuarios residenciales y comercios con facturación anual de hasta $364.000.000."},
+  {id:"163-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["justicia","constitucional"],sumario:"Reforma de los Juzgados Penales, Contravencionales y de Faltas (mod. Ley 7)",desc:"Mantiene 31 juzgados en 4 zonas. Incorpora tribunales colegiados: optativo cuando la pena máxima supere 6 años, obligatorio cuando supere 15 años."},
+  {id:"164-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["justicia","constitucional"],sumario:"Modificaciones al Código Procesal Penal de la Ciudad (Ley 2.303)",desc:"Reformula la admisibilidad de prueba, incorpora acuerdos probatorios, regula interrogatorios y prueba testimonial con posibilidad de videoconferencia, y exige acreditación previa de documentos y evidencias."},
+  {id:"171-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["obras","presupuesto"],sumario:"Gabinete Social y entierro digno gratuito (mod. Ley 4.977)",desc:"Crea el Gabinete Social para garantizar entierros dignos a personas en vulnerabilidad socioeconómica, incluyendo ataúd, velatorio y sepultura por 2 años."},
+  {id:"176-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["presupuesto"],sumario:"Alícuota 0% de IIBB para el sector alimentario (anticipos enero–diciembre 2024)",desc:"Fija 0% de IIBB para anticipos 2024 de actividades alimentarias (carnes, lácteos, panificados, etc.). Los montos ya abonados se computarán como pago a cuenta. Los beneficiarios deben reducir sus precios."},
+  {id:"179-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["presupuesto"],sumario:"Pago de haberes del Estado a través del Banco Ciudad",desc:"El Banco Ciudad deberá implementar, en 180 días, cajas de ahorro para el pago de haberes de todos los empleados de los tres poderes del Estado de la CABA, incluidos quienes cobran en otros bancos."},
+  {id:"181-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["seguridad"],sumario:"Mapa del delito presentado por el Jefe de Gobierno al inicio de sesiones (mod. Ley 5.688)",desc:"El mapa del delito pasará a ser comunicado por el Jefe de Gobierno al inicio de sesiones legislativas, con informes complementarios por tipo de delito."},
+  {id:"188-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["ddhh","trabajo","presupuesto"],sumario:"Inclusión laboral de víctimas de trata y explotación",desc:"Cupo del 1% en el empleo público y reintegro de cargas patronales por un año en el sector privado para empleadores que contraten víctimas de trata. Incluye becas de capacitación laboral y técnica."},
+  {id:"190-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["ddhh","comunicacion"],sumario:"Cartelería sobre la Línea 145 (trata) en edificios y transporte público",desc:"Obliga a colocar carteles con información sobre la Línea 145 en edificios públicos, escuelas, estaciones de Metrobús, subte y terminales de pasajeros de la Ciudad."},
+  {id:"495-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"ley",temas:["seguridad","presupuesto"],sumario:"Cámaras corporales para la Policía de la Ciudad (mod. Ley 5.688)",desc:"Implementación progresiva de cámaras corporales priorizando barrios populares, lugares de detención y eventos masivos. Crea el Centro de Control de Cámaras. Plazo máximo de un año."},
+  {id:"9-D-2026",fecha:"2/3/2026",autor:"Bielli",bloque:"FBA",tipo:"ley",temas:["desarrollo","salud","niñez","justicia","presupuesto"],sumario:"Ley Integral de Protección contra la Ciberludopatía en NNyA",desc:"Marco integral para prevenir el juego patológico digital en menores: verificación biométrica, autoexclusión, límites automáticos, restricciones publicitarias y fondo financiado con el 2% de la recaudación del juego online."},
+  {id:"62-D-2026",fecha:"2/3/2026",autor:"Bielli",bloque:"FBA",tipo:"ley",temas:["educacion","presupuesto"],sumario:"Modificaciones a la Ley de Educación Sexual Integral (Ley 2.110)",desc:"Amplía la ESI a todos los niveles y modalidades; incorpora diversidad sexual y familiar, exige formación docente permanente y evaluación anual de la UEICEE. Se extiende a Educación Artística y otros programas del PE."},
+  {id:"111-D-2026",fecha:"2/3/2026",autor:"Velázquez",bloque:"FBA",tipo:"ley",temas:["trabajo","genero","presupuesto"],sumario:"Adhesión a la Ley Diana Sacayán–Lohana Berkins (Ley Nacional 27.636)",desc:"Adhiere a la ley nacional de empleo formal para personas travestis, transexuales y transgénero y crea en la Legislatura una Comisión Especial de Seguimiento para la inserción laboral trans."},
+  {id:"387-D-2026",fecha:"2/3/2026",autor:"Grillo",bloque:"FBA",tipo:"ley",temas:["deportes","presupuesto"],sumario:"Contribución del 40% en facturas de luz y gas para clubes de barrio (RUID)",desc:"Clubes de barrio inscriptos en el RUID recibirán un reintegro no reintegrable del 40% de sus facturas de energía eléctrica y gas por dos años. El pago debe efectuarse en 30 días corridos."},
+  {id:"589-D-2026",fecha:"3/3/2026",autor:"Peñafort",bloque:"FBA",tipo:"ley",temas:["obras"],sumario:"Reparación para familiares de trabajadores fallecidos por exposición al asbesto",desc:"Reparación mensual y vitalicia de 794 UF para familiares de trabajadores del Subte y Premetro fallecidos por enfermedades causadas por asbesto, con actualización semestral y cobertura integral de salud."},
+  {id:"636-D-2026",fecha:"5/3/2026",autor:"Iañez",bloque:"FBA",tipo:"ley",temas:["vivienda","presupuesto"],sumario:"Emergencia habitacional, ambiental y social en 'La Veredita' (Comuna 8)",desc:"Declara la emergencia en el asentamiento La Veredita (Portela entre Riestra y Ana María Janer), crea una Unidad Ejecutora del IVC y una Mesa de Gestión Participativa para soluciones habitacionales definitivas."},
+  {id:"535-D-2026",fecha:"2/3/2026",autor:"Freire",bloque:"FBA",tipo:"ley",temas:["vivienda"],sumario:"Emergencia habitacional de la población travesti y trans",desc:"Declara la emergencia habitacional travesti-trans y crea en la Legislatura una comisión especial para diagnosticar la problemática y realizar seguimiento de las políticas habitacionales para este colectivo."},
+  // resoluciones FBA
+  {id:"12-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"res",temas:["niñez"],sumario:"Informe sobre NNyA sin cuidados parentales",desc:"Invita a la presidenta del CDNNyA, Victoria Morales Gorleri, a informar ante la Comisión de Niñez sobre la situación de niños sin cuidados parentales bajo intervención del organismo."},
+  {id:"21-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"res",temas:["seguridad"],sumario:"Informes sobre videovigilancia en comisarías y alcaidías",desc:"Solicita al PE detalles sobre cámaras en comisarías y alcaidías: cantidad, espacios monitoreados, almacenamiento de imágenes, supervisión continua, protocolos de acceso y fallas registradas en 2024–2025."},
+  {id:"54-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"res",temas:["planeamiento"],sumario:"Informes sobre modelos de gestión en predios destinados a desarrollos inmobiliarios",desc:"Solicita al PE, en 30 días, información sobre planificación y modelos de gestión de predios destinados a desarrollos inmobiliarios promovidos desde 2015 mediante convenios o leyes de rezonificación en predios públicos."},
+  {id:"79-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"res",temas:["planeamiento"],sumario:"Informes sobre el Convenio Anexo a la Ley 6154",desc:"Solicita al PE información sobre el convenio con titulares de parcelas de la Sección 61, el cumplimiento del plazo para el proyecto de obras y la falta de registro de la servidumbre administrativa gratuita a favor de la Ciudad."},
+  {id:"119-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"res",temas:["planeamiento"],sumario:"Informes sobre el Master Plan Distrito Joven–Costanera Norte",desc:"Solicita al PE información técnica, jurídica y ambiental del Master Plan: límites, impacto ambiental, riesgo hídrico, catastro, habilitaciones nocturnas, pasivos ambientales y responsabilidades sobre demoliciones."},
+  {id:"127-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"res",temas:["planeamiento"],sumario:"Informes sobre el cumplimiento del PUA en materia de espacios públicos (art. 9°)",desc:"Solicita al PE que informe sobre el grado de cumplimiento del Plan Urbano Ambiental en espacios verdes, riberas, áreas peatonales, calidad ambiental y paisajística del espacio público."},
+  {id:"157-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"res",temas:["desarrollo"],sumario:"Informes sobre la implementación de la Ley de Integración Productiva (Ley 6.545)",desc:"Solicita al PE, en 30 días, información sobre beneficiarios de la Ley 6.545: cantidad, localización, actividad, montos invertidos, beneficios de IIBB descontados, empleo generado y tope anual del beneficio."},
+  {id:"186-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"res",temas:["cultura"],sumario:"25° aniversario del Pasaje Lanín – colocación de placa conmemorativa",desc:"Expresa el beneplácito por el 25° aniversario del Pasaje Lanín (obra de Marino Santa María) y dispone la colocación de una placa en Barracas (Pasaje Lanín 33) para el 19 de abril de 2026."},
+  {id:"416-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"res",temas:["presupuesto"],sumario:"Informes sobre disposición y enajenación de bienes inmuebles de dominio público",desc:"Solicita al PE el listado de inmuebles enajenados desde 2008 con ubicación, tasaciones del Banco Ciudad, montos y fechas de venta, adjudicatarios, destino de fondos y organismos encargados de su gestión."},
+  {id:"77-D-2026",fecha:"2/3/2026",autor:"Bielli",bloque:"FBA",tipo:"res",temas:["educacion"],sumario:"Informes sobre el Régimen de Becas Estudiantiles (Ley 2.917)",desc:"Solicita al PE que explique los cambios al sistema de becas 2026: suspensión del rol del referente institucional, modificación del procedimiento de otorgamiento y falta de consulta a docentes y estudiantes."},
+  {id:"81-D-2026",fecha:"2/3/2026",autor:"Bielli",bloque:"FBA",tipo:"res",temas:["educacion"],sumario:"Informes sobre asignación de vacantes escolares para el ciclo lectivo 2026",desc:"Solicita datos detallados sobre vacantes solicitadas, ofertadas, asignadas y en lista de espera por nivel, modalidad, distrito y comuna, y medidas adoptadas para garantizar el derecho a la educación."},
+  {id:"638-D-2026",fecha:"5/3/2026",autor:"Bielli",bloque:"FBA",tipo:"res",temas:["educacion"],sumario:"Informes sobre recortes en programas socioeducativos (Resolución 153/2026)",desc:"Solicita al PE que explique la eliminación de comidas en Club de Chicos, cierre de sedes de CAI y Club de Jóvenes, situación laboral de docentes afectados y la reorganización de cargos derivada de la Resolución 153/2026."},
+  {id:"246-D-2026",fecha:"2/3/2026",autor:"González",bloque:"FBA",tipo:"res",temas:["salud"],sumario:"Informes sobre condiciones de trabajo de promotores/as de salud",desc:"Solicita al PE, en 30 días, información sobre normativa, modalidad de contratación, remuneraciones, aportes jubilatorios, ART, carrera profesional y presupuesto asignado a los promotores de salud."},
+  {id:"430-D-2026",fecha:"2/3/2026",autor:"Negri",bloque:"FBA",tipo:"res",temas:["niñez"],sumario:"Informes sobre NNyA internados por razones sociales en hospitales públicos",desc:"Solicita datos sobre niños internados en hospitales por disposición judicial del CDNNyA por razones sociales: tiempo de permanencia, protocolos de acompañamiento, dispositivos de cuidado alternativo."},
+  {id:"410-D-2026",fecha:"2/3/2026",autor:"Mochi",bloque:"FBA",tipo:"res",temas:["educacion"],sumario:"205° aniversario de la UBA – placa conmemorativa en Manzana de las Luces",desc:"Conmemora el 205° aniversario de la fundación de la UBA y dispone la colocación de una placa conmemorativa en el Complejo Histórico Cultural Manzana de las Luces."},
+  {id:"489-D-2026",fecha:"2/3/2026",autor:"Salvatierra",bloque:"FBA",tipo:"res",temas:["seguridad"],sumario:"Informes sobre el operativo policial en Villa 20 del 25/12/2025",desc:"Solicita información sobre el operativo de la Policía de la Ciudad en Villa 20 que habría derivado en el fallecimiento de Juan Gabriel González: autoridad a cargo, agentes intervinientes, protocolos y sumarios."},
+  // declaraciones FBA
+  {id:"1-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["ddhh"],sumario:"32° aniversario del atentado terrorista a la AMIA",desc:"Conmemoración del 32° aniversario del atentado a la AMIA y homenaje a las víctimas del hecho."},
+  {id:"5-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["ddhh"],sumario:"34° aniversario del atentado a la Embajada de Israel",desc:"Pesar por el 34° aniversario del atentado a la Embajada de Israel y conmemoración del Día de la Memoria y Solidaridad con las Víctimas."},
+  {id:"28-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["ambiente"],sumario:"Gestiones para elaborar el Código Ambiental",desc:"Insta al PE a definir criterios y elaborar instrumentos para avanzar en la sanción del Código Ambiental conforme a la Constitución local y la Ley 71."},
+  {id:"31-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["planeamiento"],sumario:"Preocupación por la postergada revisión del Plan Urbano Ambiental (Ley 2.930)",desc:"Expresa preocupación ante la demora en la revisión y actualización del Plan Urbano Ambiental."},
+  {id:"38-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["planeamiento"],sumario:"Insta al Consejo Asesor del PUA a cumplir con la Ley 71",desc:"Insta al Consejo Asesor del Plan Urbano Ambiental a dar cumplimiento estricto y transparente de las funciones, objetivos y plazos establecidos en la Ley 71."},
+  {id:"47-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["planeamiento"],sumario:"Código de Espacio Público y Paisaje Urbano en el marco del PUA",desc:"Vería con agrado que el PE promueva el debate y elaboración de un Código de Espacio Público y Paisaje Urbano en el marco de la actualización del Plan Urbano Ambiental."},
+  {id:"83-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["planeamiento"],sumario:"Preocupación por la sobredensificación urbana en Núñez (Comuna 13)",desc:"Expresa preocupación por los impactos negativos del proceso de sobredensificación urbana en el barrio de Núñez, Comuna 13."},
+  {id:"89-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["planeamiento"],sumario:"Regularización de la Matriz de Espacios Verdes como Urbanización Parque",desc:"Vería con agrado que el PE proceda a la regularización normativa de la Matriz de Espacios Verdes, afectándola íntegramente a la categoría Urbanización Parque (UP)."},
+  {id:"91-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["vivienda"],sumario:"Actualización del Plano BA-147 de gestión colaborativa",desc:"Solicita al PE que arbitre las medidas necesarias para perfeccionar y actualizar el Plano BA-147 del sistema de gestión colaborativa de la Ciudad."},
+  {id:"94-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["planeamiento"],sumario:"Regulación de la saturación de usos comerciales en barrios",desc:"Insta a gestiones para regular la saturación de usos comerciales y mitigar sus externalidades negativas, garantizando la convivencia equilibrada entre actividades urbanas en los distintos barrios."},
+  {id:"99-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["transporte"],sumario:"Impactos negativos en el entorno del Paso Bajo Nivel Nazca y vías del FFCC San Martín",desc:"Expresa preocupación por los impactos ambientales, físicos y económicos negativos en el entorno del Paso Bajo Nivel Nazca y las vías del Ferrocarril San Martín."},
+  {id:"130-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["planeamiento"],sumario:"Nuevos espacios públicos verdes y recreativos en la Comuna 11",desc:"Vería con agrado que el PE evalúe la viabilidad técnica y avance en la creación de nuevos espacios públicos verdes y recreativos en la Comuna 11."},
+  {id:"134-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["planeamiento"],sumario:"Normas urbanísticas especiales para el predio del barrio Naón (Mataderos, Comuna 9)",desc:"Vería con agrado que el PE atienda la petición del colectivo 'Vecinos Barrio Naón' y dicte normas urbanísticas especiales para el predio delimitado por Ercilla, Gral. Paz, Saladillo y Av. Emilio Castro."},
+  {id:"141-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["ambiente"],sumario:"Informes de la licitación de consultoría de RSU ante la Comisión de Ambiente",desc:"Vería con agrado que el PE presente ante la Comisión de Ambiente los informes de cada etapa de la Licitación Pública 7162-0388-LPU25 de consultoría para la Gestión Estratégica de Residuos Sólidos Urbanos."},
+  {id:"159-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["presupuesto"],sumario:"Jurisdicción presupuestaria propia para las comunas en el ejercicio 2027",desc:"Insta al PE a garantizar que cada una de las comunas de la Ciudad tenga jurisdicción presupuestaria propia en el ejercicio 2027."},
+  {id:"166-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["presupuesto"],sumario:"Nueva sucursal del Banco Ciudad en Villa Riachuelo",desc:"Gestiones ante el Banco de la Ciudad de Buenos Aires para localizar una nueva sucursal bancaria en el barrio Villa Riachuelo."},
+  {id:"174-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["seguridad"],sumario:"Declaración de interés cultural del documental 'En Cumplimiento del Deber'",desc:"Declara de interés cultural el documental 'En Cumplimiento del Deber', dirigido por Jorge Gaggero."},
+  {id:"178-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["comunicacion"],sumario:"Interés para la Comunicación Social del libro 'Braden o Perón'",desc:"Declara de interés para la Comunicación Social el libro 'Braden o Perón, el Libro Azul y el Libro Azul y Blanco. Los documentos que marcaron la campaña más importante de la historia argentina'."},
+  {id:"193-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["cultura"],sumario:"Declaración de interés cultural del espectáculo 'Sexualizarte' de Adrián Rosa",desc:"Declara de interés cultural de la Ciudad el espectáculo teatral 'Sexualizarte', de Adrián Rosa."},
+  {id:"413-D-2026",fecha:"2/3/2026",autor:"Neira",bloque:"FBA",tipo:"dec",temas:["planeamiento"],sumario:"Falta de Plan de Gestión Integral de la Ribera del Río de la Plata",desc:"Expresa preocupación ante la ausencia de un Plan de Gestión Integral de la Ribera del Río de la Plata de la Ciudad Autónoma de Buenos Aires."},
+  {id:"294-D-2026",fecha:"2/3/2026",autor:"Mochi",bloque:"FBA",tipo:"dec",temas:["cultura"],sumario:"Pesar por el fallecimiento del Dr. Miguel 'Pancho' Talento",desc:"Expresa el pesar de la Legislatura por el fallecimiento del Dr. Miguel 'Pancho' Talento."},
+  {id:"330-D-2026",fecha:"2/3/2026",autor:"González",bloque:"FBA",tipo:"dec",temas:["seguridad"],sumario:"Repudio al accionar policial del 25 y 28 de diciembre de 2025",desc:"Repudio al accionar de la Policía de la Ciudad en los operativos del 25 y 28 de diciembre de 2025."},
+  {id:"652-D-2026",fecha:"5/3/2026",autor:"Velázquez",bloque:"FBA",tipo:"dec",temas:["seguridad"],sumario:"Repudio a la represión policial contra trabajadores de FATE",desc:"Repudio a la represión perpetrada por la Policía de la Ciudad contra los trabajadores de la empresa de neumáticos FATE."},
+  {id:"86-D-2026",fecha:"2/3/2026",autor:"Bielli",bloque:"FBA",tipo:"dec",temas:["educacion"],sumario:"Repudio al cese de 50 trabajadores del programa Maestro + Maestro",desc:"Repudio ante el cese de cincuenta trabajadores del Programa Socioeducativo Maestro + Maestro."},
+  {id:"375-D-2026",fecha:"2/3/2026",autor:"Ferreño",bloque:"FBA",tipo:"dec",temas:["cultura"],sumario:"Pesar por el fallecimiento del Papa Francisco",desc:"Pesar en ocasión del aniversario del fallecimiento de Su Santidad el Papa Francisco (Jorge Mario Bergoglio)."},
+  {id:"384-D-2026",fecha:"2/3/2026",autor:"Ferreño",bloque:"FBA",tipo:"dec",temas:["cultura"],sumario:"Robert Anthony Plant: Huésped de Honor de la Ciudad",desc:"Declara al músico Robert Anthony Plant como Huésped de Honor de la Ciudad Autónoma de Buenos Aires."},
+  {id:"428-D-2026",fecha:"2/3/2026",autor:"Negri",bloque:"FBA",tipo:"dec",temas:["interjurisdiccional"],sumario:"Repudio a la postura de la delegación argentina en la Asamblea General de la ONU",desc:"Repudio a la postura sostenida por la delegación de nuestro país en la última Asamblea General de la ONU."},
+
+  // ── LA LIBERTAD AVANZA ──────────────────────────────────────────────
+  {id:"249-D-2026",fecha:"2/3/2026",autor:"Ramírez",bloque:"LLA",tipo:"ley",temas:["justicia","niñez","constitucional"],sumario:"Reducción de la edad de imputabilidad de 16 a 14 años (mod. Ley 2.451)",desc:"Modifica el Régimen Procesal Penal Juvenil para reducir la imputabilidad a 14 años, con peritajes obligatorios, penas alternativas y la figura del supervisor especializado."},
+  {id:"288-D-2026",fecha:"2/3/2026",autor:"Ramírez",bloque:"LLA",tipo:"ley",temas:["justicia","constitucional"],sumario:"Endurecimiento de sanciones contra los 'trapitos' (mod. Código Contravencional)",desc:"Incorpora arresto de 10–30 días, multas de 1.200–7.000 UF para servicios no autorizados de estacionamiento (trapitos). Agravantes por intimidación, organización o eventos masivos."},
+  {id:"318-D-2026",fecha:"2/3/2026",autor:"Ramírez",bloque:"LLA",tipo:"ley",temas:["seguridad","justicia"],sumario:"Adhesión a la Ley Nacional de Organizaciones Criminales (Ley 27.786)",desc:"Adhiere a la ley nacional para fortalecer la capacidad estatal contra delitos complejos: zonas de investigación especial y decomiso anticipado de bienes de origen ilícito."},
+  {id:"332-D-2026",fecha:"2/3/2026",autor:"Ramírez",bloque:"LLA",tipo:"ley",temas:["salud","presupuesto"],sumario:"Seguro de salud obligatorio para extranjeros sin residencia permanente (mod. Ley 153)",desc:"Modifica la Ley Básica de Salud para exigir a extranjeros sin residencia permanente contar con un seguro de salud o adherirse a un sistema de compensación de gastos médicos en la Ciudad."},
+  {id:"354-D-2026",fecha:"2/3/2026",autor:"Fleitas",bloque:"LLA",tipo:"ley",temas:["seguridad"],sumario:"Marco normativo para el armamento no letal de la Policía de la Ciudad",desc:"Define los dispositivos no letales como aquellos que inmovilizan temporalmente sin causar la muerte ni lesiones permanentes. El Ministerio de Seguridad los seleccionará y regulará. Protocolo en 6 meses."},
+  {id:"364-D-2026",fecha:"2/3/2026",autor:"Fleitas",bloque:"LLA",tipo:"ley",temas:["cultura"],sumario:"Eliminación del nombre 'Rodolfo Walsh' de la estación Entre Ríos (Línea E)",desc:"Propone mantener únicamente la denominación 'Entre Ríos', eliminando el nombre 'Rodolfo Walsh', argumentando preservar la neutralidad del espacio público y evitar disputas políticas o ideológicas."},
+  {id:"365-D-2026",fecha:"2/3/2026",autor:"Fleitas",bloque:"LLA",tipo:"ley",temas:["constitucional","justicia"],sumario:"Aumento de sanciones por daños a bienes públicos en manifestaciones",desc:"Endurece las sanciones del Código Contravencional: multas hasta 20.000 UF y arresto hasta 10 días para quienes dañen bienes durante protestas. Las sanciones se duplican si afectan monumentos, hospitales o escuelas."},
+  {id:"395-D-2026",fecha:"2/3/2026",autor:"Fleitas",bloque:"LLA",tipo:"ley",temas:["discapacidad","integracion","presupuesto"],sumario:"Ampliación del abordaje integral del TEA (mod. Ley 6.151)",desc:"Amplía la Ley de TEA: detección temprana incluso en adultos, incorpora las figuras del asistente terapéutico y docente integrador con registro propio, y reconoce la libertad de elección del profesional desde los 16 años."},
+  {id:"598-D-2026",fecha:"3/3/2026",autor:"Saifert",bloque:"LLA",tipo:"ley",temas:["justicia","constitucional"],sumario:"Imputabilidad a los 14 años en el Régimen de Faltas (mod. Ley 451)",desc:"Modifica el Régimen de Faltas y el Código Contravencional para reducir la edad mínima de imputabilidad a 14 años en ambos regímenes (actualmente 16 y 18 años respectivamente)."},
+  {id:"383-D-2026",fecha:"2/3/2026",autor:"Fleitas",bloque:"LLA",tipo:"dec",temas:["discapacidad"],sumario:"Día Internacional de las Personas con Discapacidad",desc:"Conmemoración del Día Internacional de las Personas con Discapacidad."},
+  {id:"397-D-2026",fecha:"2/3/2026",autor:"Fleitas",bloque:"LLA",tipo:"dec",temas:["comunicacion"],sumario:"Interés cultural para el libro 'La Inflación como Delito' de Ricardo Manuel Rojas",desc:"Declara de interés para la Comunicación Social el libro 'La Inflación como Delito' de Ricardo Manuel Rojas."},
+  {id:"404-D-2026",fecha:"2/3/2026",autor:"Fleitas",bloque:"LLA",tipo:"dec",temas:["justicia"],sumario:"Personalidad Destacada en Ciencias Jurídicas: Dr. Ricardo Manuel Rojas",desc:"Declara Personalidad Destacada en el ámbito de las Ciencias Jurídicas al Dr. Ricardo Manuel Rojas."},
+  {id:"662-D-2026",fecha:"5/3/2026",autor:"Fleitas",bloque:"LLA",tipo:"dec",temas:["ddhh"],sumario:"Adhesión al Día Internacional de Conmemoración de Víctimas del Terrorismo",desc:"Adhesión al Día Internacional de Conmemoración y Homenaje a las Víctimas del Terrorismo."},
+  {id:"670-D-2026",fecha:"6/3/2026",autor:"Imas",bloque:"LLA",tipo:"dec",temas:["cultura"],sumario:"140° aniversario de la Sociedad Central de Arquitectos",desc:"Conmemoración del 140° aniversario de la fundación de la Sociedad Central de Arquitectos."},
+
+  // ── VICEJEFA DE GOBIERNO ─────────────────────────────────────────────
+  {id:"625-V-2026",fecha:"4/3/2026",autor:"Vice Jefa",bloque:"VICE",tipo:"ley",temas:["niñez"],sumario:"Institución del 'Día del Niño por Nacer' el 25 de marzo",desc:"Instituye el 25 de marzo como 'Día del Niño por Nacer' en la CABA y faculta al PE a promover actividades de difusión vinculadas a la protección de la vida desde la concepción."},
+  {id:"624-V-2026",fecha:"4/3/2026",autor:"Vice Jefa",bloque:"VICE",tipo:"dec",temas:["niñez"],sumario:"Conmemoración del 'Día del Niño por Nacer' el 25 de marzo",desc:"Conmemora el 'Día del Niño por Nacer' que se celebra el 25 de marzo de cada año."},
+
+  // ── VAMOS POR MÁS ────────────────────────────────────────────────────
+  {id:"144-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["espaciopublico","obras"],sumario:"Plazos de cierre de roturas en la vía pública (mod. Ley 5.901)",desc:"Las empresas de servicios públicos tendrán 10 días hábiles para cerrar las roturas de vía pública tras notificar a la autoridad y a los frentistas. Vencido el plazo, el PE realiza la obra a costa del solicitante."},
+  {id:"160-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["discapacidad","presupuesto"],sumario:"Escalón universal para personas de talla baja en espacios de atención pública",desc:"Crea el 'escalón universal' (plataforma de al menos 3 peldaños de hasta 10,5 cm) de uso obligatorio en oficinas de atención al público de los tres poderes del Estado y organismos de la Ciudad."},
+  {id:"167-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["salud","presupuesto"],sumario:"Programa de Cuidados Paliativos en el sistema público de salud",desc:"Crea el Programa de Cuidados Paliativos: atención integral y multidisciplinaria para enfermedades progresivas, red de dispositivos especializados, protocolos, seguimiento domiciliario y partida presupuestaria específica."},
+  {id:"173-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["constitucional"],sumario:"Incompatibilidad entre función pública y órganos de la AFA (mod. Ley 6.357)",desc:"Prohíbe a funcionarios públicos integrar órganos de la AFA ni de asociaciones o sociedades cuyos equipos participen en torneos de Primera División o Primera B Nacional."},
+  {id:"183-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["cultura"],sumario:"Denominación 'José Luis Cabezas' para la esquina de California y Santa Elena",desc:"Propone denominar la esquina de las calles California y Santa Elena en homenaje al periodista y reportero gráfico asesinado en 1997. Tramita por el procedimiento de doble lectura constitucional."},
+  {id:"192-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["deportes","seguridad"],sumario:"Seguridad en eventos futbolísticos: suspensión y reconocimiento facial (mod. Ley 5.847)",desc:"Amplía las facultades del Comité de Seguridad para suspender partidos ante violencia o discriminación e incorpora cámaras de reconocimiento facial en los accesos a los estadios."},
+  {id:"197-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["justicia","constitucional"],sumario:"Ampliación del perímetro de prohibición de alcohol en espectáculos masivos",desc:"Amplía de 500 a 1.000 metros el radio de prohibición de venta de alcohol en espectáculos masivos, desde 4 horas antes hasta 1 hora después. Incorpora la contravención de consumo en vía pública dentro del radio."},
+  {id:"202-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["desarrollo","salud","niñez","justicia","presupuesto"],sumario:"Modificaciones al régimen de juegos de apuesta (mod. Ley 538)",desc:"Incorpora la definición de 'operación sospechosa' en apuestas deportivas, obliga a la LOTBA a denunciar irregularidades y crea un Comité de Seguimiento de Juegos de Apuestas con representación legislativa."},
+  {id:"207-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["salud"],sumario:"Visitas de mascotas a pacientes internados en efectores de salud",desc:"Permite el ingreso de mascotas a establecimientos de salud públicos y privados de la Ciudad. El PE elaborará un protocolo que regule horarios, condiciones sanitarias y espacios habilitados."},
+  {id:"229-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["transporte"],sumario:"Servicio de grúas prestado por el Estado o empresa mayoritariamente estatal (mod. Ley 2.148)",desc:"Modifica el Código de Tránsito para establecer que el servicio de grúas debe ser prestado por el Gobierno de la Ciudad o por una empresa con participación mayoritaria estatal."},
+  {id:"234-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["transporte"],sumario:"Servicio de grúas estatal y normas del Metrobús y ciclovías (mod. art. 2.1.5)",desc:"Sustituye el artículo 2.1.5 del Código de Tránsito: prestación estatal del servicio de grúas y agrega expresamente los supuestos del estacionamiento en Metrobús y ciclovías como habilitantes del acarreo."},
+  {id:"237-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["integracion","presupuesto"],sumario:"Prestaciones del Programa Ciudadanía Porteña en unidades retributivas (mod. Ley 1.878)",desc:"Reemplaza los montos del Programa Ciudadanía Porteña por unidades retributivas (325 UR y 216 UR) y actualiza el Programa de Apoyo para Personas en Situación de Vulnerabilidad Habitacional (5.750–7.000 UR)."},
+  {id:"241-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["transporte","obras"],sumario:"Derogación de la Ley 4.003 y responsabilidad laboral de empresas de higiene urbana (mod. Ley 4.120)",desc:"Deroga la Ley 4.003 y establece que las empresas del Servicio Público de Higiene Urbana son responsables directas de todas las obligaciones laborales de sus trabajadores."},
+  {id:"245-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["planeamiento"],sumario:"Experiencia mínima obligatoria para profesionales responsables de obras críticas (mod. Ordenanza 34.421)",desc:"El responsable de tareas críticas de obra (demolición, excavaciones, fundaciones, estructuras) deberá tener al menos 5 años de experiencia comprobada y permanecer en obra hasta el nivel 0."},
+  {id:"257-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["constitucional","legislacion"],sumario:"Marco normativo de los viajes oficiales de funcionarios del Gobierno de la Ciudad",desc:"Los viajes oficiales deberán estar orientados a generar un beneficio concreto para la Ciudad, requerirán autorización previa y un informe de resultados dentro de los 10 días posteriores al regreso."},
+  {id:"261-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["seguridad","desarrollo"],sumario:"Suspensión de eventos al aire libre ante alertas meteorológicas naranjas o rojas",desc:"Establece que deben suspenderse eventos en espacios semicerrados o al aire libre cuando el SMN emita alertas naranjas, rojas o avisos meteorológicos a muy corto plazo para la zona y horario del evento."},
+  {id:"266-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["presupuesto"],sumario:"Aprobación legislativa para subconcesiones de dominio público por más de 5 años (mod. Ley 2.095)",desc:"Modifica la Ley de Compras y Contrataciones para exigir aprobación previa de la Legislatura también cuando una concesión permita la subconcesión de inmuebles de dominio público por más de 5 años."},
+  {id:"270-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["desarrollo","salud","niñez","justicia","presupuesto"],sumario:"Programa de Prevención de la Ludopatía en el ámbito educativo",desc:"Crea un Programa de Prevención de la Ludopatía para estudiantes, docentes y familias de niveles obligatorios. Incluye protocolo de atención, campañas de concientización y coordinación con organismos estatales y ONG."},
+  {id:"274-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["desarrollo","salud","niñez","justicia","presupuesto"],sumario:"Sistema de identidad digital para verificar edad en el juego online (mod. Ley 6.330)",desc:"Actualiza el artículo 5 de la Ley de Prevención de la Ludopatía reemplazando el doble factor de autenticación por un 'sistema de identidad digital' que verifique identidad y edad del apostador al inicio de cada sesión."},
+  {id:"293-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"ley",temas:["constitucional"],sumario:"Mesa de Trabajo de Reforma de la Constitución de la CABA",desc:"Crea la Mesa de Trabajo para analizar reformas constitucionales: integrada por legisladores de tres comisiones, 5 representantes del PE, 5 del PJ y expertos. Informe final en 180 días hábiles."},
+  {id:"228-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"ley",temas:["cultura"],sumario:"Ampliación de áreas de reconocimiento en distinciones de la Ciudad (mod. Ley 578)",desc:"Modifica la Ley de Reconocimientos y Distinciones para incorporar el desarrollo económico y social como área elegible tanto para Ciudadano/a Ilustre como para Personalidad Destacada."},
+  {id:"240-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"ley",temas:["seguridad"],sumario:"Régimen de condecoraciones para personal de las fuerzas de seguridad de la Ciudad",desc:"Crea la Cruz 'San Martín al Heroico Valor en Servicio' y la Medalla 'Belgrano al Valor en Servicio', con una Comisión Conjunta de evaluación y entrega."},
+  // resoluciones VPM
+  {id:"411-D-2026",fecha:"2/3/2026",autor:"López",bloque:"VPM",tipo:"res",temas:["comunicacion"],sumario:"30° aniversario del Diario Olé – entrega de bandeja protocolar",desc:"Conmemora el 30° aniversario del Diario Olé y dispone la entrega de una bandeja protocolar en reconocimiento a la fecha."},
+  {id:"194-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"res",temas:["desarrollo"],sumario:"Diploma al Emprendedor para Claudia Salas Martínez (Café Martínez)",desc:"Propone a Claudia Salas Martínez, socia directora de Café Martínez (cadena con más de 200 locales en Argentina, Paraguay, Uruguay y Bolivia), como merecedora del Diploma del Emprendedor."},
+  {id:"346-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"res",temas:["deportes"],sumario:"50° aniversario del debut profesional de Maradona – placa en Argentinos Juniors",desc:"Rinde homenaje a Diego Armando Maradona por el 50° aniversario de su debut en Argentinos Juniors (26/10/1976) y propone la colocación de una placa conmemorativa en el estadio de La Paternal."},
+  {id:"408-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"res",temas:["deportes"],sumario:"40° aniversario del Mundial de Fútbol 1986 – bandeja protocolar",desc:"Expresa el beneplácito por el 40° aniversario de la obtención del Mundial de Fútbol de 1986 por la Selección Argentina y dispone la entrega de una bandeja protocolar."},
+  {id:"490-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"res",temas:["cultura"],sumario:"100° aniversario de la Sociedad Hebraica Argentina – placa protocolar",desc:"Expresa el beneplácito por el centenario de la Sociedad Hebraica Argentina (fundada en 1926) y dispone la entrega de una placa protocolar en conmemoración."},
+  // declaraciones VPM
+  {id:"417-D-2026",fecha:"2/3/2026",autor:"Lospennato",bloque:"VPM",tipo:"dec",temas:["deportes"],sumario:"Buenos Aires elegida 'Mejor Ciudad del Mundo para Visitar en 2026' (Wanderlust Awards)",desc:"Beneplácito por la distinción otorgada a la CABA en los Wanderlust Reader Travel Awards."},
+  {id:"688-D-2026",fecha:"6/3/2026",autor:"Lospennato",bloque:"VPM",tipo:"dec",temas:["genero"],sumario:"Día Internacional de la Mujer, 8 de marzo",desc:"Conmemoración del Día Internacional de la Mujer que se celebra el 8 de marzo de cada año."},
+  {id:"626-D-2026",fecha:"4/3/2026",autor:"López",bloque:"VPM",tipo:"dec",temas:["cultura"],sumario:"100° aniversario de la piedra fundacional del Palacio Legislativo y 95° de su inauguración",desc:"Beneplácito por el centenario de la colocación de la piedra fundacional del Palacio Legislativo y el 95° aniversario de su inauguración."},
+  {id:"407-D-2026",fecha:"2/3/2026",autor:"Alonso",bloque:"VPM",tipo:"dec",temas:["cultura"],sumario:"Pesar por el fallecimiento del Sr. Darío Lopérfido",desc:"Expresa el pesar de la Legislatura por el fallecimiento del Sr. Darío Lopérfido."},
+  {id:"682-D-2026",fecha:"6/3/2026",autor:"Alonso",bloque:"VPM",tipo:"dec",temas:["interjurisdiccional"],sumario:"Beneplácito por la liberación del gendarme Nahuel Agustín Gallo",desc:"Beneplácito por la liberación y el regreso a la República Argentina del Gendarme Nahuel Agustín Gallo."},
+  {id:"27-D-2026",fecha:"2/3/2026",autor:"Villafruela",bloque:"VPM",tipo:"dec",temas:["cultura"],sumario:"90° aniversario de la inauguración del Obelisco (23 de mayo de 2026)",desc:"Conmemoración del 90° aniversario de la inauguración del Obelisco, a celebrarse el 23 de mayo del corriente año."},
+  {id:"41-D-2026",fecha:"2/3/2026",autor:"Villafruela",bloque:"VPM",tipo:"dec",temas:["seguridad"],sumario:"Día de la Policía de la Ciudad de Buenos Aires, 18 de diciembre",desc:"Conmemoración del 'Día de la Policía de la Ciudad de Buenos Aires', que se celebra el 18 de diciembre de cada año."},
+  {id:"49-D-2026",fecha:"2/3/2026",autor:"Villafruela",bloque:"VPM",tipo:"dec",temas:["niñez"],sumario:"Día Nacional de Lucha contra el Grooming, 13 de noviembre",desc:"Conmemoración del 'Día Nacional de Lucha contra el Grooming', que se celebra el 13 de noviembre de cada año."},
+  {id:"59-D-2026",fecha:"2/3/2026",autor:"Villafruela",bloque:"VPM",tipo:"dec",temas:["salud"],sumario:"Día Mundial de la Salud Mental, 10 de octubre",desc:"Conmemoración del 'Día Mundial de la Salud Mental', que se celebra el 10 de octubre de cada año."},
+  {id:"664-D-2026",fecha:"6/3/2026",autor:"Figueroa",bloque:"VPM",tipo:"dec",temas:["ddhh"],sumario:"Repudio a declaraciones de Brancatelli que banalizaron la tortura al gendarme Gallo",desc:"Repudio a las declaraciones realizadas por Diego Brancatelli en C5N el 4 de marzo de 2026, que banalizaron el proceso sistemático de torturas sufridas por el gendarme Nahuel Agustín Gallo."},
+  {id:"665-D-2026",fecha:"6/3/2026",autor:"Figueroa",bloque:"VPM",tipo:"dec",temas:["cultura"],sumario:"40° aniversario de la Feria de Mataderos (8 de junio de 2026)",desc:"Conmemoración del 40° aniversario de la creación de la Feria de Mataderos, a cumplirse el 8 de junio de 2026."},
+  {id:"39-D-2026",fecha:"2/3/2026",autor:"Wolff",bloque:"VPM",tipo:"dec",temas:["ddhh"],sumario:"Día de Acción por la Tolerancia y el Respeto entre los Pueblos, 24 de abril",desc:"Conmemoración del 'Día de Acción por la Tolerancia y el Respeto entre los Pueblos', que se celebra el 24 de abril de cada año."},
+  {id:"50-D-2026",fecha:"2/3/2026",autor:"Wolff",bloque:"VPM",tipo:"dec",temas:["comunicacion"],sumario:"Interés para la Comunicación Social del libro 'Ofelia, la tía de todos' de Hernán Feler",desc:"Declara de interés para la Comunicación Social el libro 'Ofelia, la tía de todos. El valor de alzar la voz', escrito por Hernán Feler."},
+  {id:"118-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"dec",temas:["interjurisdiccional"],sumario:"Acuerdo para la transferencia de fueros judiciales ordinarios a la Ciudad",desc:"Vería con agrado que el Poder Ejecutivo Nacional y el de la Ciudad lleguen a un acuerdo definitivo para la transferencia de los fueros judiciales con competencia ordinaria a la jurisdicción local."},
+  {id:"124-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"dec",temas:["interjurisdiccional"],sumario:"Transferencia del Puerto de Buenos Aires y Terminal de Retiro a la Ciudad",desc:"Insta al PE a gestionar la transferencia del Puerto de Buenos Aires y la Terminal de Ómnibus de Retiro desde la Nación a la jurisdicción local."},
+  {id:"427-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"dec",temas:["cultura"],sumario:"Personalidad Destacada en el ámbito de la Cultura: Maestro Horacio Romo",desc:"Declara Personalidad Destacada en el ámbito de la Cultura de la Ciudad al Maestro Horacio Romo."},
+  {id:"530-D-2026",fecha:"2/3/2026",autor:"Donati",bloque:"VPM",tipo:"dec",temas:["cultura"],sumario:"Personalidad Destacada en Comunicación y Periodismo: Luisa Delfino",desc:"Declara Personalidad Destacada en el ámbito de la Comunicación y el Periodismo a la periodista argentina Luisa Delfino."},
+  {id:"425-D-2026",fecha:"2/3/2026",autor:"Del Gaiso",bloque:"VPM",tipo:"dec",temas:["cultura"],sumario:"Personalidad Destacada de la Cultura: periodista Joaquín Morales Solá",desc:"Declara Personalidad Destacada de la Cultura de la Ciudad Autónoma de Buenos Aires al periodista Joaquín Morales Solá."},
+
+  // ── CONFIANZA Y DESARROLLO ───────────────────────────────────────────
+  {id:"613-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["comunicacion","presupuesto"],sumario:"Bienestar digital y concientización sobre herramientas digitales (mod. Ley 6072)",desc:"Incorpora el concepto de bienestar digital y amplía las políticas de concientización: campañas, capacitaciones, manual de buenas prácticas, estadísticas por comuna y chatbot de la Ciudad."},
+  {id:"550-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["cultura"],sumario:"Renombrar calle 'Combate de Costa Brava' por 'Fiscal Alberto Nisman'",desc:"Propone cambiar el nombre del tramo de la calle 'Combate de Costa Brava' entre la calle Letonia y la Avenida Comodoro Py por 'Fiscal Alberto Nisman'."},
+  {id:"605-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["participacion"],sumario:"Asambleas Ciudadanas para la elaboración de leyes y políticas públicas",desc:"Crea las Asambleas Ciudadanas: 100 ciudadanos sorteados del padrón debaten proyectos en tres etapas (aprendizaje, deliberación y conclusiones). El documento resultante es no vinculante pero debe ser considerado en los fundamentos."},
+  {id:"606-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["participacion"],sumario:"Uso de inteligencia artificial para organizar audiencias públicas (mod. Ley 6)",desc:"Cuando haya más de 50 inscriptos en una audiencia pública, permite el uso de IA para clasificar participantes por temas, ordenar las intervenciones y elaborar informes que sistematicen el debate."},
+  {id:"607-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["educacion","comunicacion","constitucional"],sumario:"Regulación del uso de inteligencia artificial en campañas electorales",desc:"Todo contenido generado o alterado con IA en campañas electorales deberá incluir una leyenda obligatoria. La autoridad podrá recibir denuncias y detener la difusión de materiales engañosos."},
+  {id:"608-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["justicia","constitucional"],sumario:"Deepfakes y suplantación de identidad digital (mod. Código Contravencional)",desc:"Sanciona la manipulación de imágenes o videos con IA para simular contenido sexual sin consentimiento (deepfakes) y actualiza la figura de suplantación de identidad digital, con agravantes para menores o personas con discapacidad."},
+  {id:"609-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["presupuesto"],sumario:"Presupuesto basado en resultados e impacto de programas",desc:"El PE deberá remitir anualmente junto al Presupuesto la evaluación de 3 programas seleccionados por la Legislatura, analizando diseño, implementación, resultados e impacto en la ciudadanía."},
+  {id:"610-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["constitucional","comunicacion"],sumario:"Semana de la Evidencia en Políticas Públicas (primera semana de octubre)",desc:"Establece la 'Semana de la Evidencia en Políticas Públicas' durante la primera semana de octubre, con conferencias, talleres y debates para promover el uso de datos en el diseño de políticas públicas."},
+  {id:"611-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["salud","espaciopublico","presupuesto"],sumario:"Ley de Caniles: estándares para espacios caninos en parques de la Ciudad",desc:"Fija criterios obligatorios para el diseño e instalación de caniles en espacios verdes: tamaño mínimo, doble acceso, tipo de suelo, bebederos, juegos, iluminación y mantenimiento periódico."},
+  {id:"612-D-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["constitucional","educacion"],sumario:"Ciencias del comportamiento en el diseño de políticas públicas del PE",desc:"Incorpora la perspectiva de las ciencias del comportamiento al diseño, implementación y evaluación de políticas del PE: experimentación piloto, simplificación de trámites, diseño de opciones y comunicación basada en evidencia."},
+  {id:"686-P-2026",fecha:"3/3/2026",autor:"Ferrario",bloque:"CYD",tipo:"ley",temas:["planeamiento","presupuesto"],sumario:"Micro Reserva Urbana en Francisco Acuña de Figueroa 981 (Almagro)",desc:"Dispone que el PE gestione ante la AABE el traspaso del inmueble de Acuña de Figueroa 981 para destinarlo a espacio verde público como Micro Reserva Urbana, preservando el arbolado y priorizando flora nativa."},
+  {id:"24-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["legislacion"],sumario:"Capacitación en seguridad contra incendios en consorcios cada 5 años (mod. Ley 4.803)",desc:"Reduce la frecuencia obligatoria de la capacitación en higiene, seguridad y prevención contra incendios del personal de consorcios de propiedad horizontal de anual a cada cinco años."},
+  {id:"44-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["justicia","presupuesto"],sumario:"Tasa judicial en UMA para juicios no susceptibles de apreciación pecuniaria (mod. Ley 327)",desc:"Reemplaza el monto fijo de $50 como tasa judicial por un monto equivalente a 1 UMA (Unidad de Medida Arancelaria), que se actualiza automáticamente según el valor vigente al momento del pago."},
+  {id:"51-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["presupuesto"],sumario:"Exención de patente para jubilados/as y pensionados/as de bajos ingresos",desc:"Exime del pago de patentes a jubilados/as con hasta 2 haberes mínimos y 5 años de residencia en la Ciudad, para un solo vehículo cuya valuación fiscal no supere los $60.760.000 (Ley Impositiva 2026)."},
+  {id:"70-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["participacion","constitucional"],sumario:"Plataforma digital 'Vota Informado' con datos de candidatos electorales",desc:"Crea la plataforma 'Vota Informado' del Instituto de Gestión Electoral para brindar información pública y actualizada sobre precandidatos y candidatos antes de cada proceso electoral local."},
+  {id:"71-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["salud","presupuesto"],sumario:"Registro de donantes voluntarios de sangre canina y felina",desc:"Crea un registro online, gratuito y virtual de donantes voluntarios de sangre canina y felina para facilitar y organizar este tipo de donaciones. La información de los propietarios será confidencial a pedido de parte."},
+  {id:"80-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["obras","salud","presupuesto"],sumario:"Cementerio Público de animales domésticos y hallados en la vía pública",desc:"Crea en la Ciudad un Cementerio Público de animales domésticos y hallados en la vía pública, con servicio de cremación optativo, gratuito para organizaciones proteccionistas."},
+  {id:"281-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["constitucional","participacion"],sumario:"Boleta Única de Papel como único sistema de votación y elecciones separadas de las nacionales",desc:"Establece la BUP como único instrumento de votación, prohíbe la adhesión a elecciones nacionales y define el diseño de la boleta: fotografías a color de los primeros candidatos y casillero para voto por lista completa."},
+  {id:"507-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["obras","presupuesto"],sumario:"Exención de peajes para vehículos híbridos-eléctricos en autopistas de la Ciudad",desc:"Exime del pago de peajes en todas las autopistas de la CABA a vehículos autopropulsados por sistemas híbridos-eléctricos, por un plazo de 10 años a partir de la sanción de la ley."},
+  {id:"509-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["genero","presupuesto"],sumario:"Encuesta de Incidencia y Prevalencia de Violencia contra las Mujeres",desc:"Crea una encuesta estadística trienal sobre violencia doméstica y de pareja en mujeres mayores de 18 años, para orientar el diseño de políticas públicas. Primera edición en 180 días de sancionada la ley."},
+  {id:"510-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["genero"],sumario:"Semana del Puerperio (semana número 40 de cada año)",desc:"Instituye la Semana del Puerperio cada año durante la semana número 40, con actividades y campañas del PE orientadas a concientizar sobre la importancia del acompañamiento en el período posparto."},
+  {id:"511-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["genero","presupuesto"],sumario:"Mapa de la Violencia de Género",desc:"Crea el Mapa de la Violencia de Género como herramienta de gestión para recopilar y procesar información sobre la población afectada, orientando la planificación estratégica y el seguimiento cuantitativo de las políticas públicas."},
+  {id:"513-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["desarrollo","salud","niñez","justicia","presupuesto"],sumario:"Campaña de prevención de ciberludopatía en escuelas secundarias",desc:"Establece los lineamientos para una campaña de prevención y concientización sobre ciberludopatía para estudiantes del nivel medio, en establecimientos estatales y privados."},
+  {id:"514-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["genero","comunicacion","presupuesto"],sumario:"Campaña gráfica y audiovisual de difusión de la Ley Contra la Discriminación (Ley 5261)",desc:"Establece una campaña de difusión de los mecanismos de la Ley 5.261 contra la discriminación en vía pública, edificios públicos y redes sociales oficiales, con lemas y canales de contacto claramente visibles."},
+  {id:"515-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["salud","genero","presupuesto"],sumario:"Copa menstrual gratuita en los CeSACs para personas menstruantes",desc:"Garantiza la entrega gratuita de copas menstruales a residentes de la Ciudad que lo soliciten a través de los CeSACs, previa consulta ginecológica y con capacitación del personal de salud."},
+  {id:"517-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["desarrollo","salud","niñez","justicia","presupuesto"],sumario:"Regulación de la publicidad y promoción de apuestas online",desc:"Prohíbe toda publicidad de apuestas online en la vía pública y medios oficiales de la Ciudad. Impone restricciones a quienes la difundan y obliga a incluir mensajes preventivos en horarios de protección del menor."},
+  {id:"561-D-2026",fecha:"3/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["seguridad","deportes"],sumario:"Programa de Asistencia a Víctimas de Violencia en el Fútbol",desc:"Crea un Programa con un Centro de Atención interdisciplinario para brindar asistencia médica, psicológica, social y legal a víctimas de violencia vinculada al fútbol."},
+  {id:"614-D-2026",fecha:"3/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"ley",temas:["seguridad","deportes"],sumario:"Línea gratuita de 3 dígitos para denuncias de violencia en el fútbol",desc:"Crea una línea telefónica gratuita de tres dígitos, disponible las 24 horas, a cargo del Ministerio Público Fiscal, para recibir denuncias sobre violencia y delitos vinculados al fútbol."},
+  // resoluciones CYD
+  {id:"90-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"res",temas:["ambiente"],sumario:"Agradecimiento a la Brigada de Incendios Forestales por el combate en Chubut",desc:"Expresa el profundo agradecimiento de la Legislatura a la Brigada de Incendios Forestales del Cuerpo de Bomberos y a la Brigada Forestal de las Reservas Ecológicas por su actuación en los incendios de Chubut."},
+  {id:"105-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"res",temas:["reglamento"],sumario:"Modificación del reglamento para el informe del Jefe de Gabinete (arts. 287 y 289)",desc:"Establece nuevas reglas para el procedimiento del informe del Jefe de Gabinete: plazo previo para el temario, tiempos de exposición de una hora, intervenciones proporcionales por bloque y respuestas escritas en 5 días hábiles."},
+  // declaraciones CYD
+  {id:"199-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"dec",temas:["interjurisdiccional"],sumario:"Transferencia a la CABA de parcelas de Playas Ferroviarias para uso público",desc:"Insta al Poder Ejecutivo Nacional a transferir a la Ciudad parcelas de Playas Ferroviarias de Buenos Aires S.A. destinadas a espacio público, en el marco del desarrollo del sector U45 Nuevo Palermo I."},
+  {id:"205-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"dec",temas:["ddhh"],sumario:"Día del Veterano y de los Caídos en la Guerra de Malvinas, 2 de abril",desc:"Conmemoración del 'Día del Veterano y de los Caídos en la Guerra de Malvinas e Islas del Atlántico Sur', que tiene lugar el 2 de abril de cada año."},
+  {id:"211-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"dec",temas:["ddhh"],sumario:"Repudio a las amenazas de muerte contra el periodista Alejandro Alfie",desc:"Repudio a las amenazas de muerte recibidas por el periodista Alejandro Alfie el 4 de febrero de 2026."},
+  {id:"214-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"dec",temas:["cultura"],sumario:"Pesar por el fallecimiento de Héctor Alterio",desc:"Expresa el pesar de la Legislatura por el fallecimiento del actor Héctor Alterio."},
+  {id:"220-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"dec",temas:["mayores"],sumario:"Adhesión al Día Mundial de Toma de Conciencia contra el Abuso en la Vejez",desc:"Adhesión a la conmemoración del 'Día Mundial de Toma de Conciencia contra el Abuso y el Maltrato en la Vejez'."},
+  {id:"227-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"dec",temas:["salud"],sumario:"Día Mundial de la Salud, 7 de abril",desc:"Conmemoración del 'Día Mundial de la Salud', a celebrarse el 7 de abril del corriente año."},
+  {id:"230-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"dec",temas:["mayores"],sumario:"Día del Jubilado, 20 de septiembre",desc:"Conmemoración del 'Día del Jubilado', que se celebra el 20 de septiembre de cada año."},
+  {id:"260-D-2026",fecha:"2/3/2026",autor:"Ocaña",bloque:"CYD",tipo:"dec",temas:["ddhh"],sumario:"32° aniversario del ataque terrorista a la AMIA, 18 de julio de 2026",desc:"Expresa el dolor de la Legislatura al cumplirse, el 18 de julio de 2026, el 32° aniversario del ataque terrorista perpetrado a la sede de la AMIA."},
+
+  // ── CIUDADANOS UNIDOS / UCR ─────────────────────────────────────────
+  {id:"8-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["desarrollo","salud","niñez","justicia","presupuesto"],sumario:"Marco integral de prevención de riesgos de apuestas online en NNyA",desc:"Crea una unidad especializada en delitos de juego ilegal, una línea de denuncia y asistencia, prohíbe publicidad de plataformas ilegales y apuestas en tiempo real durante eventos deportivos, y destina al menos el 5% de la recaudación a prevención."},
+  {id:"17-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["educacion","presupuesto"],sumario:"Programa de Tutorías Académicas para el nivel primario",desc:"Crea el Programa de Tutorías Académicas para escuelas primarias estatales: grupos reducidos, prioridad en Matemática y Prácticas del Lenguaje, acompañamiento socioemocional, 2–3 veces por semana."},
+  {id:"30-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["educacion","trabajo","presupuesto"],sumario:"Extensión de la obligatoriedad escolar a la sala de 3 años de nivel inicial",desc:"Extiende la obligatoriedad escolar al nivel inicial de 3 años en toda la CABA. Obliga al Estado a ampliar infraestructura, actualizar el currículo y garantizar recursos con criterios de equidad."},
+  {id:"42-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["niñez","presupuesto"],sumario:"Registro de Cuidadores Domiciliarios para NNyA",desc:"Crea el Registro de Cuidadores Domiciliarios para NNyA: plataforma pública con requisitos de inscripción (antecedentes penales actualizados, examen psicofísico, cursos habilitados) y acreditación oficial."},
+  {id:"61-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["constitucional"],sumario:"Derogación de la prohibición de venta de alcohol durante la veda electoral",desc:"Elimina la restricción al comercio de bebidas alcohólicas que actualmente rige desde 12 horas antes del inicio del comicio hasta 3 horas después de su cierre."},
+  {id:"73-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["ambiente","desarrollo","presupuesto"],sumario:"Prohibición progresiva de cubiertos plásticos de un solo uso",desc:"Prohíbe progresivamente la entrega, utilización y expendio de cubiertos plásticos de un solo uso vinculados al consumo de alimentos. Incorpora una nueva infracción al Régimen de Faltas con multas de 250 a 25.000 UF."},
+  {id:"98-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["cultura","discapacidad"],sumario:"Funciones distendidas en museos, cines, salas de teatro y otros espacios culturales",desc:"Establece la implementación obligatoria de funciones distendidas en espacios culturales de la Ciudad para personas con TEA y trastornos sensoriales: mínimo una por mes en complejos de cine y una semestral en otros espacios."},
+  {id:"107-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["educacion","presupuesto"],sumario:"Fortalecimiento de la alfabetización inicial en nivel inicial y primer ciclo primario",desc:"Garantiza la alfabetización inicial desde el comienzo de la escolaridad obligatoria: metas de lectoescritura, evaluaciones censales diagnósticas, materiales didácticos, pareja pedagógica y tutorías para estudiantes con desempeño bajo el básico."},
+  {id:"532-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["constitucional","genero"],sumario:"Paridad de género en empresas y sociedades del Estado de la CABA",desc:"Promueve la paridad de género en la designación e integración de los órganos de administración y fiscalización de empresas públicas, sociedades anónimas con participación estatal mayoritaria."},
+  {id:"568-D-2026",fecha:"3/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["cultura"],sumario:"Renombrar estación 'Bolívar' de la Línea E como 'Bolívar – Colegio Nacional de Buenos Aires'",desc:"Propone modificar la denominación de la estación 'Bolívar' de la Línea E de subte para incorporar el nombre del Colegio Nacional de Buenos Aires."},
+  {id:"576-D-2026",fecha:"3/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["salud","ddhh","presupuesto"],sumario:"Registro de Información de Gametos Donados (RIGaD)",desc:"Crea el RIGaD para registrar nacimientos por técnicas de reproducción asistida con gametos donados y garantizar el derecho de las personas nacidas a conocer sus orígenes e información médica relevante de los donantes."},
+  {id:"577-D-2026",fecha:"3/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["genero","presupuesto"],sumario:"Sistema de Indicadores de Cuidado (SICCABA)",desc:"Regula el funcionamiento del SICCABA para garantizar la producción, sistematización y difusión de información sobre la organización social del cuidado: oferta y demanda de servicios, uso del tiempo y aporte económico del cuidado."},
+  {id:"679-D-2026",fecha:"6/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["salud","comunicacion"],sumario:"Mes de la Fertilidad (junio de cada año)",desc:"Crea el 'Mes de la Fertilidad' durante el mes de junio para promover la concientización sobre el cuidado de la fertilidad, la prevención de factores de riesgo y el acceso a diagnósticos y técnicas de reproducción asistida."},
+  {id:"680-D-2026",fecha:"6/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["educacion","vivienda","presupuesto"],sumario:"Prioridad habitacional en el uso de inmuebles de herencias vacantes (mod. Ley 52)",desc:"El IVC tendrá 15 días de preferencia para destinar los inmuebles de herencias vacantes a políticas habitacionales antes de su subasta. Los fondos de subastas se distribuirán en programas de autogestión, vivienda asequible, adultos mayores y refugios para mujeres."},
+  {id:"683-D-2026",fecha:"6/3/2026",autor:"Thourte",bloque:"UCR",tipo:"ley",temas:["desarrollo","salud","justicia"],sumario:"Regulación de productos emergentes de tabaco y nicotina (cigarrillos electrónicos, bolsas de nicotina)",desc:"Marco regulatorio para cigarrillos electrónicos, bolsas de nicotina y tabaco calentado: los declara nocivos, prohíbe su uso en espacios cerrados, restringe la venta a menores de 18, limita la publicidad e incorpora gestión de residuos."},
+  {id:"302-D-2026",fecha:"2/3/2026",autor:"Crucitta",bloque:"UCR",tipo:"ley",temas:["salud","discapacidad","legislacion"],sumario:"Regulación del ejercicio del Acompañamiento Terapéutico",desc:"Regula la actividad del Acompañante Terapéutico en la CABA: matrícula obligatoria, registro en el Ministerio de Salud, derechos y obligaciones, régimen sancionatorio y cláusula transitoria para quienes ya ejercen sin título."},
+  // resoluciones UCR
+  {id:"578-D-2026",fecha:"3/3/2026",autor:"Thourte",bloque:"UCR",tipo:"res",temas:["vivienda"],sumario:"Informes sobre el Programa Fideicomiso para la Construcción de Viviendas Sociales",desc:"Solicita al IVC información detallada sobre el estado del Programa Fideicomiso para Construcción de Viviendas Sociales: marco normativo, beneficiarios, criterios de selección, ejecución presupuestaria y distribución territorial."},
+  {id:"579-D-2026",fecha:"3/3/2026",autor:"Thourte",bloque:"UCR",tipo:"res",temas:["vivienda"],sumario:"Informes sobre el Programa Autogestión para la Vivienda",desc:"Solicita al IVC información sobre el Programa Autogestión para la Vivienda: modalidad, entidades beneficiarias, obras iniciadas y finalizadas, soluciones habitacionales entregadas y distribución territorial."},
+  {id:"580-D-2026",fecha:"3/3/2026",autor:"Thourte",bloque:"UCR",tipo:"res",temas:["obras"],sumario:"Informes sobre el cumplimiento de la Ley 1877 (soterramiento de cables)",desc:"Solicita al PE que informe sobre cables aéreos sin soterrar, relevamientos de cables en desuso, mecanismos de inspección, denuncias vecinales, sanciones a empresas prestatarias y planes vigentes para la remoción progresiva."},
+  {id:"581-D-2026",fecha:"3/3/2026",autor:"Thourte",bloque:"UCR",tipo:"res",temas:["comunicacion"],sumario:"Informes sobre la implementación de la Ley 6367 de Lenguaje Claro",desc:"Solicita al PE información sobre el estado de implementación de la Ley de Lenguaje Claro: medidas adoptadas, Manual de Lenguaje Claro, plataformas digitales adaptadas, capacitaciones al personal y partidas presupuestarias asignadas."},
+  {id:"305-D-2026",fecha:"2/3/2026",autor:"Crucitta",bloque:"UCR",tipo:"res",temas:["cultura"],sumario:"135° aniversario de la UCR – placa conmemorativa en sede de Tucumán",desc:"Expresa el beneplácito por el 135° aniversario de la Unión Cívica Radical y dispone la colocación de una placa conmemorativa en la sede del partido en la calle Tucumán."},
+  {id:"617-D-2026",fecha:"4/3/2026",autor:"Loupias",bloque:"UCR",tipo:"res",temas:["comunicacion"],sumario:"50° aniversario del Diario Ámbito Financiero – bandeja protocolar",desc:"Expresa el beneplácito de la Legislatura por el 50° aniversario del diario Ámbito Financiero (fundado en 1976) y dispone la entrega de una bandeja protocolar conmemorativa."},
+  // declaraciones UCR
+  {id:"132-D-2026",fecha:"2/3/2026",autor:"Thourte",bloque:"UCR",tipo:"dec",temas:["vivienda"],sumario:"Interés social de la labor de 'Hábitat para la Humanidad Argentina'",desc:"Declara de interés social la labor realizada por la organización sin fines de lucro 'Hábitat para la Humanidad Argentina'."},
+  {id:"415-D-2026",fecha:"2/3/2026",autor:"Mollard",bloque:"UCR",tipo:"dec",temas:["ddhh"],sumario:"50° aniversario del Golpe de Estado del 24 de marzo de 1976",desc:"Conmemoración del 50° aniversario del golpe de Estado del 24 de marzo de 1976."},
+  {id:"232-D-2026",fecha:"2/3/2026",autor:"Crucitta",bloque:"UCR",tipo:"dec",temas:["cultura"],sumario:"Interés institucional: 30 años de la sanción de la Constitución de la Ciudad",desc:"Declara de interés institucional la conmemoración de los 30 años de la sanción de la Constitución de la Ciudad Autónoma de Buenos Aires."},
+  {id:"244-D-2026",fecha:"2/3/2026",autor:"Crucitta",bloque:"UCR",tipo:"dec",temas:["ddhh"],sumario:"50° aniversario de 'La Noche de los Lápices'",desc:"Conmemoración del quincuagésimo aniversario de 'La Noche de los Lápices'."},
+  {id:"250-D-2026",fecha:"2/3/2026",autor:"Crucitta",bloque:"UCR",tipo:"dec",temas:["genero"],sumario:"Día Internacional de la Mujer, 8 de marzo",desc:"Conmemoración del 'Día Internacional de la Mujer' que se celebra el 8 de marzo de cada año."},
+  {id:"268-D-2026",fecha:"2/3/2026",autor:"Crucitta",bloque:"UCR",tipo:"dec",temas:["cultura"],sumario:"Interés institucional por el Día de la Autonomía de la Ciudad, 10 de octubre",desc:"Declara de interés institucional las actividades que se realicen en conmemoración del Día de la Autonomía de la Ciudad, a celebrarse el 10 de octubre."},
+
+  // ── IZQUIERDA ────────────────────────────────────────────────────────
+  {id:"619-D-2026",fecha:"4/3/2026",autor:"Biasi",bloque:"IZQ",tipo:"ley",temas:["educacion","trabajo"],sumario:"Anulación de la Resolución 153/26 de política socioeducativa y reincorporación de docentes",desc:"Propone anular la Resolución 153/26 que implicaría despidos, cierre de programas educativos y precarización laboral docente, y dispone la reincorporación de docentes desafectados y la reapertura de sedes."},
+  {id:"620-D-2026",fecha:"4/3/2026",autor:"Biasi",bloque:"IZQ",tipo:"res",temas:["educacion"],sumario:"Informes sobre el Postítulo de Especialización Docente en ESI del IES 'Joaquín V. González'",desc:"Solicita al PE que informe, en 30 días, por qué no se abrieron las inscripciones 2026 del Postítulo de ESI en el IES González, si está prevista su continuidad y las razones de la inestabilidad laboral docente."},
+  {id:"634-D-2026",fecha:"4/3/2026",autor:"Biasi",bloque:"IZQ",tipo:"res",temas:["seguridad"],sumario:"Informes sobre la represión policial contra trabajadores de FATE",desc:"Solicita al PE información sobre el operativo policial durante la protesta de trabajadores de FATE: órdenes impartidas, efectivos, instancias de diálogo previas, personas heridas o detenidas y protocolos aplicados."},
+  {id:"667-D-2026",fecha:"6/3/2026",autor:"Biasi",bloque:"IZQ",tipo:"res",temas:["educacion"],sumario:"Informes sobre el cierre del programa 'Orquestas y Coros para la Equidad'",desc:"Solicita al PE que informe sobre el cierre del programa 'Orquestas y Coros para la Equidad' y de las orquestas 'Virgen de Itatí' y 'Violeta Parra' en barrios vulnerables, y la situación de los 19 docentes afectados."},
+  {id:"669-D-2026",fecha:"6/3/2026",autor:"Biasi",bloque:"IZQ",tipo:"res",temas:["planeamiento"],sumario:"Interpelación de autoridades de la AGC por el derrumbe en el complejo Procrear 'Estación Buenos Aires'",desc:"Cita al Recinto al Director Ejecutivo de la AGC y a las Directoras de Fiscalización de Obras y de Registro de Obras y Catastro para ser interpelados respecto al derrumbe en el complejo Estación Buenos Aires en Parque Patricios."},
+  {id:"591-D-2026",fecha:"3/3/2026",autor:"Biasi",bloque:"IZQ",tipo:"res",temas:["planeamiento"],sumario:"Informes sobre el derrumbe en el complejo Procrear 'Estación Buenos Aires' (3/3/2026)",desc:"Solicita al PE información sobre el derrumbe del 3/3/2026: circunstancias, empresas intervinientes, estado de ocupación, inspecciones previas, denuncias vecinales, medidas de asistencia adoptadas y peritajes posteriores."},
+  {id:"419-D-2026",fecha:"2/3/2026",autor:"D'Atri",bloque:"IZQ",tipo:"res",temas:["vivienda"],sumario:"Informes sobre los operativos de desalojo 2024–2026",desc:"Solicita al PE información sobre los desalojos realizados entre 2024 y 2026: cantidad de personas desalojadas (incluidos NNyA), intervención del CDNNyA, destino habitacional posterior, seguimientos sociales y protocolos de resguardo."},
+  {id:"668-D-2026",fecha:"6/3/2026",autor:"Biasi",bloque:"IZQ",tipo:"dec",temas:["educacion"],sumario:"Repudio al cierre del programa 'Orquestas y Coros para la Equidad'",desc:"Repudio a la decisión del Gobierno de la Ciudad de cerrar definitivamente el programa 'Orquestas y Coros para la Equidad' y otros programas culturales en barrios vulnerables."},
+  {id:"628-D-2026",fecha:"4/3/2026",autor:"D'Atri",bloque:"IZQ",tipo:"dec",temas:["seguridad"],sumario:"Repudio a la represión policial contra trabajadores de FATE y organizaciones sociales",desc:"Repudio a la represión perpetrada por la Policía de la Ciudad contra los trabajadores de la empresa de neumáticos FATE y distintas organizaciones sociales, políticas, sindicales y de derechos humanos."},
+  {id:"521-D-2026",fecha:"2/3/2026",autor:"D'Atri",bloque:"IZQ",tipo:"dec",temas:["genero"],sumario:"Adhesión a la jornada de lucha del Día Internacional de las Mujeres",desc:"Adhesión a la jornada de lucha en conmemoración del Día Internacional de las Mujeres."},
+  {id:"522-D-2026",fecha:"2/3/2026",autor:"D'Atri",bloque:"IZQ",tipo:"dec",temas:["interjurisdiccional"],sumario:"Repudio al bombardeo contra la escuela de niñas en Minab, Irán",desc:"Repudio al bombardeo perpetrado contra la Escuela Primaria de Niñas Shajareh Tayyebeh en la ciudad de Minab, República Islámica de Irán."},
+
+  // ── DEFENSORÍA DEL PUEBLO ────────────────────────────────────────────
+  {id:"545-F-2026",fecha:"3/3/2026",autor:"Defensoría del Pueblo",bloque:"DEF",tipo:"ley",temas:["trabajo"],sumario:"Licencia de 180 días por adopción o guarda con fines adoptivos (mod. Ley 360)",desc:"Extiende la licencia especial a 180 días corridos con goce íntegro de haberes para los casos de adopción u otorgamiento de guarda con fines de adopción."},
+  {id:"546-F-2026",fecha:"3/3/2026",autor:"Defensoría del Pueblo",bloque:"DEF",tipo:"ley",temas:["planeamiento"],sumario:"Catalogación con Nivel de Protección Cautelar de inmuebles en Chacarita",desc:"Dispone la catalogación con Nivel de Protección Cautelar de una serie de inmuebles del barrio de Chacarita e incorporarlos al Listado de Inmuebles Catalogados Singulares del Código Urbanístico."},
+  {id:"547-F-2026",fecha:"3/3/2026",autor:"Defensoría del Pueblo",bloque:"DEF",tipo:"ley",temas:["participacion"],sumario:"Audiencias públicas en modalidad mixta (mod. Ley 6)",desc:"Las audiencias públicas se celebrarán en modalidad mixta (presencial + virtual) como regla general. Excepcionalmente y con razones fundadas podrán ser sólo presenciales o sólo virtuales."},
+  {id:"558-F-2026",fecha:"3/3/2026",autor:"Defensoría del Pueblo",bloque:"DEF",tipo:"ley",temas:["consumidores"],sumario:"Suspensión de sumarios al consumidor cuando cesa la infracción (mod. Ley 757)",desc:"Faculta a la autoridad de defensa del consumidor a suspender el procedimiento sumarial cuando la infracción no afecte la salud o seguridad y el infractor cese la conducta de inmediato. Si no hay impulso en un año, se archivan las actuaciones."},
+  {id:"559-F-2026",fecha:"3/3/2026",autor:"Defensoría del Pueblo",bloque:"DEF",tipo:"ley",temas:["planeamiento"],sumario:"Preservación del barrio de Floresta – APH 53 (mod. Código Urbanístico)",desc:"Modifica el APH 53 Floresta del Código Urbanístico para evaluar puntualmente cada demolición propuesta, ajustar los límites de altura y el cuadro de usos, preservando el carácter residencial e histórico del barrio."},
+];
+
+// ── BLOQUE META ──────────────────────────────────────────────────────────
+const BLOQUE_META = {
+  FBA:  {label:"Fuerza por Buenos Aires", cls:"fba"},
+  LLA:  {label:"La Libertad Avanza",      cls:"lla"},
+  VICE: {label:"Vicejefa de Gobierno",    cls:"vice"},
+  VPM:  {label:"Vamos por Más",           cls:"vpm"},
+  CYD:  {label:"Confianza y Desarrollo",  cls:"cyd"},
+  UCR:  {label:"Ciudadanos Unidos / UCR", cls:"ucr"},
+  IZQ:  {label:"Izquierda",              cls:"izq"},
+  DEF:  {label:"Defensoría del Pueblo",  cls:"def"},
+};
+const BLOQUE_ORDER = ["FBA","VPM","CYD","UCR","LLA","IZQ","DEF","VICE"];
+
+const TIPO_LABELS = {ley:"Ley", res:"Resolución", dec:"Declaración"};
+
+// ── STATE ────────────────────────────────────────────────────────────────
+let activeBloque = "all";
+let activeTipo   = "all";
+let activeTema   = "all";
+
+// ── TAB SWITCHING ────────────────────────────────────────────────────────
+function showTab(t) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + t).classList.add('active');
+  event.currentTarget.classList.add('active');
+  if (t === 'b') renderProyectos();
+}
+
+// ── FILTER TOGGLES ───────────────────────────────────────────────────────
+function toggleBloqueFilter(el, val) {
+  document.querySelectorAll('[data-filter-bloque]').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  activeBloque = val;
+  applyFilters();
+}
+function toggleTipoFilter(el, val) {
+  document.querySelectorAll('[data-filter-tipo]').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  activeTipo = val;
+  applyFilters();
+}
+function toggleTemaFilter(el, val) {
+  document.querySelectorAll('[data-filter-tema]').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  activeTema = val;
+  applyFilters();
+}
+
+// ── FILTER + RENDER ──────────────────────────────────────────────────────
+function applyFilters() {
+  renderProyectos();
+}
+
+function highlight(text, query) {
+  if (!query) return text;
+  const safe = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return text.replace(new RegExp(safe, 'gi'), m => `<mark>${m}</mark>`);
+}
+
+function renderProyectos() {
+  const query = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+  const container = document.getElementById('proyectosContainer');
+
+  const filtered = PROYECTOS.filter(p => {
+    if (activeBloque !== 'all' && p.bloque !== activeBloque) return false;
+    if (activeTipo !== 'all' && p.tipo !== activeTipo) return false;
+    if (activeTema !== 'all' && !p.temas.includes(activeTema)) return false;
+    if (query) {
+      const haystack = [p.id, p.autor, p.sumario, p.desc, p.fecha].join(' ').toLowerCase();
+      if (!haystack.includes(query)) return false;
+    }
+    return true;
+  });
+
+  document.getElementById('resultsCount').innerHTML =
+    `<strong>${filtered.length}</strong> de 211 expedientes`;
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<div class="no-results">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><path d="M8 11h6M11 8v6"/></svg>
+      <p>No hay expedientes que coincidan con los filtros.</p>
+    </div>`;
+    return;
+  }
+
+  // Group by bloque in canonical order
+  const groups = {};
+  BLOQUE_ORDER.forEach(b => { groups[b] = []; });
+  filtered.forEach(p => { if (groups[p.bloque]) groups[p.bloque].push(p); });
+
+  let html = '';
+  BLOQUE_ORDER.forEach(bloqueKey => {
+    const items = groups[bloqueKey];
+    if (items.length === 0) return;
+    const meta = BLOQUE_META[bloqueKey];
+    html += `<div class="bloque-group-header bg-${meta.cls}">
+      <span class="bloque-group-dot" style="background:var(--${meta.cls})"></span>
+      ${meta.label} <span style="margin-left:auto;opacity:.7;font-size:10px">${items.length}</span>
+    </div>`;
+    items.forEach(p => {
+      const badgeCls = `badge-${p.tipo}`;
+      const tipoBadge = `<span class="tipo-badge ${badgeCls}">${TIPO_LABELS[p.tipo]}</span>`;
+      const sumHl  = highlight(p.sumario, query);
+      const descHl = highlight(p.desc, query);
+      const metaHl = highlight(`${p.id} · ${p.autor} · ${p.fecha}`, query);
+      html += `<div class="proyecto-card border-${meta.cls}">
+        <div class="card-top">
+          <span class="card-meta">${metaHl}</span>
+          ${tipoBadge}
+        </div>
+        <div class="card-sumario">${sumHl}</div>
+        <div class="card-desc">${descHl}</div>
+      </div>`;
+    });
+  });
+
+  container.innerHTML = html;
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────
+renderProyectos();
+</script>
+</body>
+</html>
